@@ -1,4 +1,4 @@
-module resume.Utils
+module ResumeUtils
     exposing
         ( encodeNestedOptional
         , encodeNestedRequired

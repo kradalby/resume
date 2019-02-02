@@ -1,6 +1,6 @@
-module resume.Resume Schema exposing (..)
+module Resume exposing (..)
 
--- 
+--
 
 import Json.Decode as Decode
     exposing
@@ -28,7 +28,7 @@ import Json.Encode as Encode
         , list
         , object
         )
-import resume.Utils
+import ResumeUtils
     exposing
         ( encodeNestedOptional
         , encodeNestedRequired
@@ -68,8 +68,6 @@ type alias Items =
     { name : Maybe String
     , reference : Maybe String
     }
-
-
 type alias Items =
     { area : Maybe String
     , courses : Maybe Courses
@@ -79,22 +77,16 @@ type alias Items =
     , startDate : Maybe String
     , studyType : Maybe String
     }
-
-
 type alias Items =
     { awarder : Maybe String
     , date : Maybe String
     , summary : Maybe String
     , title : Maybe String
     }
-
-
 type alias Items =
     { fluency : Maybe String
     , language : Maybe String
     }
-
-
 type alias Items =
     { name : Maybe String
     , publisher : Maybe String
@@ -102,8 +94,6 @@ type alias Items =
     , summary : Maybe String
     , website : Maybe String
     }
-
-
 type alias Items =
     { endDate : Maybe String
     , highlights : Maybe Highlights
@@ -113,21 +103,15 @@ type alias Items =
     , summary : Maybe String
     , website : Maybe String
     }
-
-
 type alias Items =
     { keywords : Maybe Keywords
     , level : Maybe String
     , name : Maybe String
     }
-
-
 type alias Items =
     { keywords : Maybe Keywords
     , name : Maybe String
     }
-
-
 type alias Items =
     { company : Maybe String
     , endDate : Maybe String
@@ -137,8 +121,6 @@ type alias Items =
     , summary : Maybe String
     , website : Maybe String
     }
-
-
 type alias Items =
     { network : Maybe String
     , url : Maybe String
@@ -202,8 +184,6 @@ educationDecoder =
 highlightsDecoder : Decoder (List String)
 highlightsDecoder =
     Decode.list Decode.string
-
-
 highlightsDecoder : Decoder (List String)
 highlightsDecoder =
     Decode.list Decode.string
@@ -219,8 +199,6 @@ itemsDecoder =
     succeed Items
         |> optional "name" (nullable Decode.string) Nothing
         |> optional "reference" (nullable Decode.string) Nothing
-
-
 itemsDecoder : Decoder Items
 itemsDecoder =
     succeed Items
@@ -231,8 +209,6 @@ itemsDecoder =
         |> optional "institution" (nullable Decode.string) Nothing
         |> optional "startDate" (nullable Decode.string) Nothing
         |> optional "studyType" (nullable Decode.string) Nothing
-
-
 itemsDecoder : Decoder Items
 itemsDecoder =
     succeed Items
@@ -240,15 +216,11 @@ itemsDecoder =
         |> optional "date" (nullable Decode.string) Nothing
         |> optional "summary" (nullable Decode.string) Nothing
         |> optional "title" (nullable Decode.string) Nothing
-
-
 itemsDecoder : Decoder Items
 itemsDecoder =
     succeed Items
         |> optional "fluency" (nullable Decode.string) Nothing
         |> optional "language" (nullable Decode.string) Nothing
-
-
 itemsDecoder : Decoder Items
 itemsDecoder =
     succeed Items
@@ -257,8 +229,6 @@ itemsDecoder =
         |> optional "releaseDate" (nullable Decode.string) Nothing
         |> optional "summary" (nullable Decode.string) Nothing
         |> optional "website" (nullable Decode.string) Nothing
-
-
 itemsDecoder : Decoder Items
 itemsDecoder =
     succeed Items
@@ -269,23 +239,17 @@ itemsDecoder =
         |> optional "startDate" (nullable Decode.string) Nothing
         |> optional "summary" (nullable Decode.string) Nothing
         |> optional "website" (nullable Decode.string) Nothing
-
-
 itemsDecoder : Decoder Items
 itemsDecoder =
     succeed Items
         |> optional "keywords" (nullable keywordsDecoder) Nothing
         |> optional "level" (nullable Decode.string) Nothing
         |> optional "name" (nullable Decode.string) Nothing
-
-
 itemsDecoder : Decoder Items
 itemsDecoder =
     succeed Items
         |> optional "keywords" (nullable keywordsDecoder) Nothing
         |> optional "name" (nullable Decode.string) Nothing
-
-
 itemsDecoder : Decoder Items
 itemsDecoder =
     succeed Items
@@ -296,8 +260,6 @@ itemsDecoder =
         |> optional "startDate" (nullable Decode.string) Nothing
         |> optional "summary" (nullable Decode.string) Nothing
         |> optional "website" (nullable Decode.string) Nothing
-
-
 itemsDecoder : Decoder Items
 itemsDecoder =
     succeed Items
@@ -309,8 +271,6 @@ itemsDecoder =
 keywordsDecoder : Decoder (List String)
 keywordsDecoder =
     Decode.list Decode.string
-
-
 keywordsDecoder : Decoder (List String)
 keywordsDecoder =
     Decode.list Decode.string
@@ -418,8 +378,6 @@ encodeStrings highlights =
     highlights
         |> List.map Encode.string
         |> Encode.list
-
-
 encodeStrings : List String -> Value
 encodeStrings highlights =
     highlights
@@ -440,8 +398,6 @@ encodeItems items =
         |> encodeOptional "name" items.name Encode.string
         |> encodeOptional "reference" items.reference Encode.string
         |> Encode.object
-
-
 encodeItems : Items -> Value
 encodeItems items =
     []
@@ -453,8 +409,6 @@ encodeItems items =
         |> encodeOptional "startDate" items.startDate Encode.string
         |> encodeOptional "studyType" items.studyType Encode.string
         |> Encode.object
-
-
 encodeItems : Items -> Value
 encodeItems items =
     []
@@ -463,16 +417,12 @@ encodeItems items =
         |> encodeOptional "summary" items.summary Encode.string
         |> encodeOptional "title" items.title Encode.string
         |> Encode.object
-
-
 encodeItems : Items -> Value
 encodeItems items =
     []
         |> encodeOptional "fluency" items.fluency Encode.string
         |> encodeOptional "language" items.language Encode.string
         |> Encode.object
-
-
 encodeItems : Items -> Value
 encodeItems items =
     []
@@ -482,8 +432,6 @@ encodeItems items =
         |> encodeOptional "summary" items.summary Encode.string
         |> encodeOptional "website" items.website Encode.string
         |> Encode.object
-
-
 encodeItems : Items -> Value
 encodeItems items =
     []
@@ -495,8 +443,6 @@ encodeItems items =
         |> encodeOptional "summary" items.summary Encode.string
         |> encodeOptional "website" items.website Encode.string
         |> Encode.object
-
-
 encodeItems : Items -> Value
 encodeItems items =
     []
@@ -504,16 +450,12 @@ encodeItems items =
         |> encodeOptional "level" items.level Encode.string
         |> encodeOptional "name" items.name Encode.string
         |> Encode.object
-
-
 encodeItems : Items -> Value
 encodeItems items =
     []
         |> encodeOptional "keywords" items.keywords encodeKeywords
         |> encodeOptional "name" items.name Encode.string
         |> Encode.object
-
-
 encodeItems : Items -> Value
 encodeItems items =
     []
@@ -525,8 +467,6 @@ encodeItems items =
         |> encodeOptional "summary" items.summary Encode.string
         |> encodeOptional "website" items.website Encode.string
         |> Encode.object
-
-
 encodeItems : Items -> Value
 encodeItems items =
     []
@@ -541,8 +481,6 @@ encodeStrings keywords =
     keywords
         |> List.map Encode.string
         |> Encode.list
-
-
 encodeStrings : List String -> Value
 encodeStrings keywords =
     keywords
@@ -573,36 +511,26 @@ encodeItemss profiles =
     profiles
         |> List.map encodeItems
         |> Encode.list
-
-
 encodeItemss : List Items -> Value
 encodeItemss publications =
     publications
         |> List.map encodeItems
         |> Encode.list
-
-
 encodeItemss : List Items -> Value
 encodeItemss references =
     references
         |> List.map encodeItems
         |> Encode.list
-
-
 encodeItemss : List Items -> Value
 encodeItemss skills =
     skills
         |> List.map encodeItems
         |> Encode.list
-
-
 encodeItemss : List Items -> Value
 encodeItemss volunteer =
     volunteer
         |> List.map encodeItems
         |> Encode.list
-
-
 encodeItemss : List Items -> Value
 encodeItemss work =
     work
