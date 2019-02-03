@@ -73,16 +73,16 @@ if (MODE === 'development') {
   console.log('Building for dev...')
   module.exports = merge(common, {
     plugins: [
-      // Suggested for hot-loading
-      new webpack.NamedModulesPlugin(),
-      // Prevents compilation errors causing the hot loader to lose state
-      new webpack.NoEmitOnErrorsPlugin(),
       new HTMLWebpackPlugin({
       // Use this template to get basic responsive meta tags
         template: 'src/index.html',
         // inject details of output file at end of body
         inject: 'body'
-      })
+      }),
+      // Suggested for hot-loading
+      new webpack.NamedModulesPlugin(),
+      // Prevents compilation errors causing the hot loader to lose state
+      new webpack.NoEmitOnErrorsPlugin()
     ],
     module: {
       rules: [
@@ -124,7 +124,8 @@ if (MODE === 'production') {
     plugins: [
       new HTMLWebpackPlugin({
       // Use this template to get basic responsive meta tags
-        template: '!!prerender-loader?string!src/index.html',
+        template: 'src/index.html',
+        // template: '!!prerender-loader?string!src/index.html',
         // inject details of output file at end of body
         inject: 'body'
       }),
