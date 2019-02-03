@@ -22,12 +22,6 @@ var common = {
     filename: filename
   },
   plugins: [
-    new HTMLWebpackPlugin({
-      // Use this template to get basic responsive meta tags
-      template: '!!prerender-loader?string!src/index.html',
-      // inject details of output file at end of body
-      inject: 'body'
-    })
   ],
   resolve: {
     modules: [path.join(__dirname, 'src'), 'node_modules'],
@@ -82,7 +76,13 @@ if (MODE === 'development') {
       // Suggested for hot-loading
       new webpack.NamedModulesPlugin(),
       // Prevents compilation errors causing the hot loader to lose state
-      new webpack.NoEmitOnErrorsPlugin()
+      new webpack.NoEmitOnErrorsPlugin(),
+      new HTMLWebpackPlugin({
+      // Use this template to get basic responsive meta tags
+        template: 'src/index.html',
+        // inject details of output file at end of body
+        inject: 'body'
+      })
     ],
     module: {
       rules: [
@@ -122,6 +122,12 @@ if (MODE === 'production') {
   console.log('Building for Production...')
   module.exports = merge(common, {
     plugins: [
+      new HTMLWebpackPlugin({
+      // Use this template to get basic responsive meta tags
+        template: '!!prerender-loader?string!src/index.html',
+        // inject details of output file at end of body
+        inject: 'body'
+      }),
       // Delete everything from output directory and report to user
       new CleanWebpackPlugin(['dist'], {
         root: __dirname,

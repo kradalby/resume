@@ -37,10 +37,10 @@ import ResumeUtils
         )
 
 
-type alias ResumeSchema =
+type alias Resume =
     { awards : Maybe Awards
     , basics : Maybe Basics
-    , education : Maybe Education
+    , education : Maybe Educations
     , interests : Maybe Interests
     , languages : Maybe Languages
     , publications : Maybe Publications
@@ -64,11 +64,33 @@ type alias Basics =
     }
 
 
-type alias Items =
+type alias Highlights =
+    List String
+
+
+type alias Courses =
+    List String
+
+
+type alias Keywords =
+    List String
+
+
+type alias References =
+    List Reference
+
+
+type alias Reference =
     { name : Maybe String
     , reference : Maybe String
     }
-type alias Items =
+
+
+type alias Educations =
+    List Education
+
+
+type alias Education =
     { area : Maybe String
     , courses : Maybe Courses
     , endDate : Maybe String
@@ -77,24 +99,48 @@ type alias Items =
     , startDate : Maybe String
     , studyType : Maybe String
     }
-type alias Items =
+
+
+type alias Awards =
+    List Award
+
+
+type alias Award =
     { awarder : Maybe String
     , date : Maybe String
     , summary : Maybe String
     , title : Maybe String
     }
-type alias Items =
+
+
+type alias Languages =
+    List Language
+
+
+type alias Language =
     { fluency : Maybe String
     , language : Maybe String
     }
-type alias Items =
+
+
+type alias Publications =
+    List Publication
+
+
+type alias Publication =
     { name : Maybe String
     , publisher : Maybe String
     , releaseDate : Maybe String
     , summary : Maybe String
     , website : Maybe String
     }
-type alias Items =
+
+
+type alias Volunteer =
+    List Volunteering
+
+
+type alias Volunteering =
     { endDate : Maybe String
     , highlights : Maybe Highlights
     , organization : Maybe String
@@ -103,16 +149,34 @@ type alias Items =
     , summary : Maybe String
     , website : Maybe String
     }
-type alias Items =
+
+
+type alias Skills =
+    List Skill
+
+
+type alias Skill =
     { keywords : Maybe Keywords
     , level : Maybe String
     , name : Maybe String
     }
-type alias Items =
+
+
+type alias Interests =
+    List Interest
+
+
+type alias Interest =
     { keywords : Maybe Keywords
     , name : Maybe String
     }
-type alias Items =
+
+
+type alias Work =
+    List Job
+
+
+type alias Job =
     { company : Maybe String
     , endDate : Maybe String
     , highlights : Maybe Highlights
@@ -121,7 +185,13 @@ type alias Items =
     , summary : Maybe String
     , website : Maybe String
     }
-type alias Items =
+
+
+type alias Profiles =
+    List Profile
+
+
+type alias Profile =
     { network : Maybe String
     , url : Maybe String
     , username : Maybe String
@@ -137,12 +207,12 @@ type alias Location =
     }
 
 
-resumeSchemaDecoder : Decoder ResumeSchema
+resumeSchemaDecoder : Decoder Resume
 resumeSchemaDecoder =
-    succeed ResumeSchema
+    succeed Resume
         |> optional "awards" (nullable awardsDecoder) Nothing
         |> optional "basics" (nullable basicsDecoder) Nothing
-        |> optional "education" (nullable educationDecoder) Nothing
+        |> optional "education" (nullable educationsDecoder) Nothing
         |> optional "interests" (nullable interestsDecoder) Nothing
         |> optional "languages" (nullable languagesDecoder) Nothing
         |> optional "publications" (nullable publicationsDecoder) Nothing
@@ -152,9 +222,9 @@ resumeSchemaDecoder =
         |> optional "work" (nullable workDecoder) Nothing
 
 
-awardsDecoder : Decoder (List Items)
+awardsDecoder : Decoder Awards
 awardsDecoder =
-    Decode.list itemsDecoder
+    Decode.list awardDecoder
 
 
 basicsDecoder : Decoder Basics
@@ -171,37 +241,36 @@ basicsDecoder =
         |> optional "website" (nullable Decode.string) Nothing
 
 
-coursesDecoder : Decoder (List String)
+coursesDecoder : Decoder Courses
 coursesDecoder =
     Decode.list Decode.string
 
 
-educationDecoder : Decoder (List Items)
-educationDecoder =
-    Decode.list itemsDecoder
+educationsDecoder : Decoder Educations
+educationsDecoder =
+    Decode.list educationDecoder
 
 
-highlightsDecoder : Decoder (List String)
-highlightsDecoder =
-    Decode.list Decode.string
-highlightsDecoder : Decoder (List String)
+highlightsDecoder : Decoder Highlights
 highlightsDecoder =
     Decode.list Decode.string
 
 
-interestsDecoder : Decoder (List Items)
+interestsDecoder : Decoder Interests
 interestsDecoder =
-    Decode.list itemsDecoder
+    Decode.list interestDecoder
 
 
-itemsDecoder : Decoder Items
-itemsDecoder =
-    succeed Items
+referenceDecoder : Decoder Reference
+referenceDecoder =
+    succeed Reference
         |> optional "name" (nullable Decode.string) Nothing
         |> optional "reference" (nullable Decode.string) Nothing
-itemsDecoder : Decoder Items
-itemsDecoder =
-    succeed Items
+
+
+educationDecoder : Decoder Education
+educationDecoder =
+    succeed Education
         |> optional "area" (nullable Decode.string) Nothing
         |> optional "courses" (nullable coursesDecoder) Nothing
         |> optional "endDate" (nullable Decode.string) Nothing
@@ -209,29 +278,37 @@ itemsDecoder =
         |> optional "institution" (nullable Decode.string) Nothing
         |> optional "startDate" (nullable Decode.string) Nothing
         |> optional "studyType" (nullable Decode.string) Nothing
-itemsDecoder : Decoder Items
-itemsDecoder =
-    succeed Items
+
+
+awardDecoder : Decoder Award
+awardDecoder =
+    succeed Award
         |> optional "awarder" (nullable Decode.string) Nothing
         |> optional "date" (nullable Decode.string) Nothing
         |> optional "summary" (nullable Decode.string) Nothing
         |> optional "title" (nullable Decode.string) Nothing
-itemsDecoder : Decoder Items
-itemsDecoder =
-    succeed Items
+
+
+languageDecoder : Decoder Language
+languageDecoder =
+    succeed Language
         |> optional "fluency" (nullable Decode.string) Nothing
         |> optional "language" (nullable Decode.string) Nothing
-itemsDecoder : Decoder Items
-itemsDecoder =
-    succeed Items
+
+
+publicationDecoder : Decoder Publication
+publicationDecoder =
+    succeed Publication
         |> optional "name" (nullable Decode.string) Nothing
         |> optional "publisher" (nullable Decode.string) Nothing
         |> optional "releaseDate" (nullable Decode.string) Nothing
         |> optional "summary" (nullable Decode.string) Nothing
         |> optional "website" (nullable Decode.string) Nothing
-itemsDecoder : Decoder Items
-itemsDecoder =
-    succeed Items
+
+
+volunteeringDecoder : Decoder Volunteering
+volunteeringDecoder =
+    succeed Volunteering
         |> optional "endDate" (nullable Decode.string) Nothing
         |> optional "highlights" (nullable highlightsDecoder) Nothing
         |> optional "organization" (nullable Decode.string) Nothing
@@ -239,20 +316,26 @@ itemsDecoder =
         |> optional "startDate" (nullable Decode.string) Nothing
         |> optional "summary" (nullable Decode.string) Nothing
         |> optional "website" (nullable Decode.string) Nothing
-itemsDecoder : Decoder Items
-itemsDecoder =
-    succeed Items
+
+
+skillDecoder : Decoder Skill
+skillDecoder =
+    succeed Skill
         |> optional "keywords" (nullable keywordsDecoder) Nothing
         |> optional "level" (nullable Decode.string) Nothing
         |> optional "name" (nullable Decode.string) Nothing
-itemsDecoder : Decoder Items
-itemsDecoder =
-    succeed Items
+
+
+interestDecoder : Decoder Interest
+interestDecoder =
+    succeed Interest
         |> optional "keywords" (nullable keywordsDecoder) Nothing
         |> optional "name" (nullable Decode.string) Nothing
-itemsDecoder : Decoder Items
-itemsDecoder =
-    succeed Items
+
+
+jobDecoder : Decoder Job
+jobDecoder =
+    succeed Job
         |> optional "company" (nullable Decode.string) Nothing
         |> optional "endDate" (nullable Decode.string) Nothing
         |> optional "highlights" (nullable highlightsDecoder) Nothing
@@ -260,25 +343,24 @@ itemsDecoder =
         |> optional "startDate" (nullable Decode.string) Nothing
         |> optional "summary" (nullable Decode.string) Nothing
         |> optional "website" (nullable Decode.string) Nothing
-itemsDecoder : Decoder Items
-itemsDecoder =
-    succeed Items
+
+
+profileDecoder : Decoder Profile
+profileDecoder =
+    succeed Profile
         |> optional "network" (nullable Decode.string) Nothing
         |> optional "url" (nullable Decode.string) Nothing
         |> optional "username" (nullable Decode.string) Nothing
 
 
-keywordsDecoder : Decoder (List String)
-keywordsDecoder =
-    Decode.list Decode.string
-keywordsDecoder : Decoder (List String)
+keywordsDecoder : Decoder Keywords
 keywordsDecoder =
     Decode.list Decode.string
 
 
-languagesDecoder : Decoder (List Items)
+languagesDecoder : Decoder Languages
 languagesDecoder =
-    Decode.list itemsDecoder
+    Decode.list languageDecoder
 
 
 locationDecoder : Decoder Location
@@ -291,248 +373,31 @@ locationDecoder =
         |> optional "region" (nullable Decode.string) Nothing
 
 
-profilesDecoder : Decoder (List Items)
+profilesDecoder : Decoder Profiles
 profilesDecoder =
-    Decode.list itemsDecoder
+    Decode.list profileDecoder
 
 
-publicationsDecoder : Decoder (List Items)
+publicationsDecoder : Decoder Publications
 publicationsDecoder =
-    Decode.list itemsDecoder
+    Decode.list publicationDecoder
 
 
-referencesDecoder : Decoder (List Items)
+referencesDecoder : Decoder References
 referencesDecoder =
-    Decode.list itemsDecoder
+    Decode.list referenceDecoder
 
 
-skillsDecoder : Decoder (List Items)
+skillsDecoder : Decoder Skills
 skillsDecoder =
-    Decode.list itemsDecoder
+    Decode.list skillDecoder
 
 
-volunteerDecoder : Decoder (List Items)
+volunteerDecoder : Decoder Volunteer
 volunteerDecoder =
-    Decode.list itemsDecoder
+    Decode.list volunteeringDecoder
 
 
-workDecoder : Decoder (List Items)
+workDecoder : Decoder Work
 workDecoder =
-    Decode.list itemsDecoder
-
-
-encodeResumeSchema : ResumeSchema -> Value
-encodeResumeSchema resumeSchema =
-    []
-        |> encodeOptional "awards" resumeSchema.awards encodeAwards
-        |> encodeOptional "basics" resumeSchema.basics encodeBasics
-        |> encodeOptional "education" resumeSchema.education encodeEducation
-        |> encodeOptional "interests" resumeSchema.interests encodeInterests
-        |> encodeOptional "languages" resumeSchema.languages encodeLanguages
-        |> encodeOptional "publications" resumeSchema.publications encodePublications
-        |> encodeOptional "references" resumeSchema.references encodeReferences
-        |> encodeOptional "skills" resumeSchema.skills encodeSkills
-        |> encodeOptional "volunteer" resumeSchema.volunteer encodeVolunteer
-        |> encodeOptional "work" resumeSchema.work encodeWork
-        |> Encode.object
-
-
-encodeItemss : List Items -> Value
-encodeItemss awards =
-    awards
-        |> List.map encodeItems
-        |> Encode.list
-
-
-encodeBasics : Basics -> Value
-encodeBasics basics =
-    []
-        |> encodeOptional "email" basics.email Encode.string
-        |> encodeOptional "label" basics.label Encode.string
-        |> encodeOptional "location" basics.location encodeLocation
-        |> encodeOptional "name" basics.name Encode.string
-        |> encodeOptional "phone" basics.phone Encode.string
-        |> encodeOptional "picture" basics.picture Encode.string
-        |> encodeOptional "profiles" basics.profiles encodeProfiles
-        |> encodeOptional "summary" basics.summary Encode.string
-        |> encodeOptional "website" basics.website Encode.string
-        |> Encode.object
-
-
-encodeStrings : List String -> Value
-encodeStrings courses =
-    courses
-        |> List.map Encode.string
-        |> Encode.list
-
-
-encodeItemss : List Items -> Value
-encodeItemss education =
-    education
-        |> List.map encodeItems
-        |> Encode.list
-
-
-encodeStrings : List String -> Value
-encodeStrings highlights =
-    highlights
-        |> List.map Encode.string
-        |> Encode.list
-encodeStrings : List String -> Value
-encodeStrings highlights =
-    highlights
-        |> List.map Encode.string
-        |> Encode.list
-
-
-encodeItemss : List Items -> Value
-encodeItemss interests =
-    interests
-        |> List.map encodeItems
-        |> Encode.list
-
-
-encodeItems : Items -> Value
-encodeItems items =
-    []
-        |> encodeOptional "name" items.name Encode.string
-        |> encodeOptional "reference" items.reference Encode.string
-        |> Encode.object
-encodeItems : Items -> Value
-encodeItems items =
-    []
-        |> encodeOptional "area" items.area Encode.string
-        |> encodeOptional "courses" items.courses encodeCourses
-        |> encodeOptional "endDate" items.endDate Encode.string
-        |> encodeOptional "gpa" items.gpa Encode.string
-        |> encodeOptional "institution" items.institution Encode.string
-        |> encodeOptional "startDate" items.startDate Encode.string
-        |> encodeOptional "studyType" items.studyType Encode.string
-        |> Encode.object
-encodeItems : Items -> Value
-encodeItems items =
-    []
-        |> encodeOptional "awarder" items.awarder Encode.string
-        |> encodeOptional "date" items.date Encode.string
-        |> encodeOptional "summary" items.summary Encode.string
-        |> encodeOptional "title" items.title Encode.string
-        |> Encode.object
-encodeItems : Items -> Value
-encodeItems items =
-    []
-        |> encodeOptional "fluency" items.fluency Encode.string
-        |> encodeOptional "language" items.language Encode.string
-        |> Encode.object
-encodeItems : Items -> Value
-encodeItems items =
-    []
-        |> encodeOptional "name" items.name Encode.string
-        |> encodeOptional "publisher" items.publisher Encode.string
-        |> encodeOptional "releaseDate" items.releaseDate Encode.string
-        |> encodeOptional "summary" items.summary Encode.string
-        |> encodeOptional "website" items.website Encode.string
-        |> Encode.object
-encodeItems : Items -> Value
-encodeItems items =
-    []
-        |> encodeOptional "endDate" items.endDate Encode.string
-        |> encodeOptional "highlights" items.highlights encodeHighlights
-        |> encodeOptional "organization" items.organization Encode.string
-        |> encodeOptional "position" items.position Encode.string
-        |> encodeOptional "startDate" items.startDate Encode.string
-        |> encodeOptional "summary" items.summary Encode.string
-        |> encodeOptional "website" items.website Encode.string
-        |> Encode.object
-encodeItems : Items -> Value
-encodeItems items =
-    []
-        |> encodeOptional "keywords" items.keywords encodeKeywords
-        |> encodeOptional "level" items.level Encode.string
-        |> encodeOptional "name" items.name Encode.string
-        |> Encode.object
-encodeItems : Items -> Value
-encodeItems items =
-    []
-        |> encodeOptional "keywords" items.keywords encodeKeywords
-        |> encodeOptional "name" items.name Encode.string
-        |> Encode.object
-encodeItems : Items -> Value
-encodeItems items =
-    []
-        |> encodeOptional "company" items.company Encode.string
-        |> encodeOptional "endDate" items.endDate Encode.string
-        |> encodeOptional "highlights" items.highlights encodeHighlights
-        |> encodeOptional "position" items.position Encode.string
-        |> encodeOptional "startDate" items.startDate Encode.string
-        |> encodeOptional "summary" items.summary Encode.string
-        |> encodeOptional "website" items.website Encode.string
-        |> Encode.object
-encodeItems : Items -> Value
-encodeItems items =
-    []
-        |> encodeOptional "network" items.network Encode.string
-        |> encodeOptional "url" items.url Encode.string
-        |> encodeOptional "username" items.username Encode.string
-        |> Encode.object
-
-
-encodeStrings : List String -> Value
-encodeStrings keywords =
-    keywords
-        |> List.map Encode.string
-        |> Encode.list
-encodeStrings : List String -> Value
-encodeStrings keywords =
-    keywords
-        |> List.map Encode.string
-        |> Encode.list
-
-
-encodeItemss : List Items -> Value
-encodeItemss languages =
-    languages
-        |> List.map encodeItems
-        |> Encode.list
-
-
-encodeLocation : Location -> Value
-encodeLocation location =
-    []
-        |> encodeOptional "address" location.address Encode.string
-        |> encodeOptional "city" location.city Encode.string
-        |> encodeOptional "countryCode" location.countryCode Encode.string
-        |> encodeOptional "postalCode" location.postalCode Encode.string
-        |> encodeOptional "region" location.region Encode.string
-        |> Encode.object
-
-
-encodeItemss : List Items -> Value
-encodeItemss profiles =
-    profiles
-        |> List.map encodeItems
-        |> Encode.list
-encodeItemss : List Items -> Value
-encodeItemss publications =
-    publications
-        |> List.map encodeItems
-        |> Encode.list
-encodeItemss : List Items -> Value
-encodeItemss references =
-    references
-        |> List.map encodeItems
-        |> Encode.list
-encodeItemss : List Items -> Value
-encodeItemss skills =
-    skills
-        |> List.map encodeItems
-        |> Encode.list
-encodeItemss : List Items -> Value
-encodeItemss volunteer =
-    volunteer
-        |> List.map encodeItems
-        |> Encode.list
-encodeItemss : List Items -> Value
-encodeItemss work =
-    work
-        |> List.map encodeItems
-        |> Encode.list
+    Decode.list jobDecoder

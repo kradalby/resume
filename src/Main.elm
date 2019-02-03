@@ -1,21 +1,11 @@
 module Main exposing (Model, Msg(..), init, main, update, view)
 
 import Browser
-import Browser.Navigation as Nav
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Json.Decode as Decode
 import Resume
-
-
--- ---------------------------
--- PORTS
--- ---------------------------
-
-
-port toJs : String -> Cmd msg
-
 
 
 -- ---------------------------
@@ -58,8 +48,16 @@ update message model =
 
 view : Model -> Html Msg
 view model =
-    div [ class "container" ]
-        [ h1 [] [ text "Hellow" ] ]
+    div []
+        [ section [ class "sheet padding-10mm" ]
+            [ article []
+                [ text "This is an A4 document." ]
+            ]
+        , section [ class "sheet padding-10mm" ]
+            [ article []
+                [ text "This is an A4 document." ]
+            ]
+        ]
 
 
 
@@ -70,13 +68,11 @@ view model =
 
 main : Program Decode.Value Model Msg
 main =
-    Browser.document
+    Browser.element
         { init = init
         , update = update
         , view =
             \msg ->
-                { title = "Resume - Kristoffer Dalby"
-                , body = [ view msg ]
-                }
+                view msg
         , subscriptions = \_ -> Sub.none
         }
