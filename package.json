@@ -1,7 +1,7 @@
 {
-    "author": "Simon Hampton",
-    "name": "elm-webpack-starter",
-    "version": "3.1.1",
+    "author": "Kristoffer Dalby",
+    "name": "resume",
+    "version": "",
     "description": "Elm 0.19 starter with Webpack 4 hot-reloading",
     "main": "index.js",
     "scripts": {
@@ -20,7 +20,6 @@
         "@babel/core": "^7.2.2",
         "@babel/preset-env": "^7.3.1",
         "babel-loader": "^8.0.5",
-        "bootstrap": "^4.2.1",
         "clean-webpack-plugin": "^1.0.1",
         "copy-webpack-plugin": "^4.6.0",
         "css-loader": "^2.1.0",
@@ -31,7 +30,6 @@
         "elm-webpack-loader": "^5.0.0",
         "file-loader": "^3.0.1",
         "html-webpack-plugin": "^3.2.0",
-        "koa-connect-history-api-fallback": "^0.3.1",
         "mini-css-extract-plugin": "^0.5.0",
         "node-sass": "^4.11.0",
         "purecss": "^1.0.0",
@@ -43,12 +41,10 @@
         "webpack-cli": "^3.2.1",
         "webpack-dev-server": "^3.1.14",
         "webpack-merge": "^4.2.1",
-        "prerender-loader": "^1.2.0"
+        "prerender-loader": "^1.2.0",
+        "paper-css": "^0.4.1"
     },
     "prettier": {
         "tabWidth": 4
-    },
-    "dependencies": {
-        "paper-css": "^0.4.1"
     }
 }
