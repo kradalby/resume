@@ -207,8 +207,8 @@ type alias Location =
     }
 
 
-resumeSchemaDecoder : Decoder Resume
-resumeSchemaDecoder =
+decoder : Decoder Resume
+decoder =
     succeed Resume
         |> optional "awards" (nullable awardsDecoder) Nothing
         |> optional "basics" (nullable basicsDecoder) Nothing

@@ -2,12 +2,12 @@
 
 require('./styles.scss')
 
+const resume = require('./resume.json')
 const {Elm} = require('./Main')
 
 // const storageKey = 'store'
 // const flags = localStorage.getItem(storageKey)
-const flags = null
 let app = Elm.Main.init({
-  flags: flags,
+  flags: resume,
   node: document.getElementById('app')
 })

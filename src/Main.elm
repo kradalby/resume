@@ -14,13 +14,18 @@ import Resume
 
 
 type alias Model =
-    { counter : Int
+    { resume : Maybe Resume.Resume
     }
 
 
 init : Decode.Value -> ( Model, Cmd Msg )
-init flags =
-    ( { counter = 0 }, Cmd.none )
+init flag =
+    case Decode.decodeValue Resume.decoder flag of
+        Ok resume ->
+            ( { resume = Just resume }, Cmd.none )
+
+        Err err ->
+            ( { resume = Nothing }, Cmd.none )
 
 
 
@@ -37,7 +42,7 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update message model =
     case message of
         Inc ->
-            ( { model | counter = model.counter + 1 }, Cmd.none )
+            ( model, Cmd.none )
 
 
 
@@ -48,16 +53,17 @@ update message model =
 
 view : Model -> Html Msg
 view model =
-    div []
-        [ section [ class "sheet padding-10mm" ]
-            [ article []
-                [ text "This is an A4 document." ]
-            ]
-        , section [ class "sheet padding-10mm" ]
-            [ article []
-                [ text "This is an A4 document." ]
-            ]
-        ]
+    case model.resume of
+        Nothing ->
+            text "Could not parse resume"
+
+        Just resume ->
+            div []
+                [ section [ class "sheet padding-10mm" ]
+                    [ article []
+                        [ text "This will be CV" ]
+                    ]
+                ]
 
 
 
