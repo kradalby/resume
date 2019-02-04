@@ -1,8 +1,8 @@
 {
     "author": "Kristoffer Dalby",
     "name": "resume",
-    "version": "",
-    "description": "Elm 0.19 starter with Webpack 4 hot-reloading",
+    "version": "1.0.0",
+    "description": "Kristoffer Dalby's resume",
     "main": "index.js",
     "scripts": {
         "test": "elm-test",
@@ -11,10 +11,7 @@
         "build": "webpack",
         "prod": "webpack -p"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/simonh1000/elm-webpack-starter.git"
-    },
+    "repository": "git+https://github.com/kradalby/resume.git",
     "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.2.2",
@@ -32,6 +29,8 @@
         "html-webpack-plugin": "^3.2.0",
         "mini-css-extract-plugin": "^0.5.0",
         "node-sass": "^4.11.0",
+        "paper-css": "^0.4.1",
+        "prerender-loader": "^1.2.0",
         "purecss": "^1.0.0",
         "resolve-url-loader": "^3.0.0",
         "sass-loader": "^7.1.0",
@@ -40,14 +39,13 @@
         "webpack": "^4.29.0",
         "webpack-cli": "^3.2.1",
         "webpack-dev-server": "^3.1.14",
-        "webpack-merge": "^4.2.1",
-        "prerender-loader": "^1.2.0",
-        "paper-css": "^0.4.1"
+        "webpack-merge": "^4.2.1"
     },
     "prettier": {
         "tabWidth": 4
     },
-    "dependencies": {
-        "terser": "^3.14.1"
-    }
+    "resolutions": {
+        "terser": "3.14.*"
+    },
+    "private": true
 }

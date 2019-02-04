@@ -6,13 +6,13 @@ FROM node:10 as elm
 WORKDIR /app
 
 COPY package.json .
-RUN npm install --silent
+RUN yarn install --silent
 
 COPY elm.json .
 
 ENV NODE_ENV "production"
 COPY . .
-RUN npm run prod
+RUN yarn run prod
 
 
 FROM nginx:alpine
