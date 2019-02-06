@@ -60,8 +60,12 @@ type alias Basics =
     , picture : Maybe String
     , profiles : Maybe Profiles
     , summary : Maybe String
-    , website : Maybe String
+    , website : Maybe Url
     }
+
+
+type alias Url =
+    String
 
 
 type alias Highlights =
@@ -132,7 +136,7 @@ type alias Publication =
     , publisher : Maybe String
     , releaseDate : Maybe String
     , summary : Maybe String
-    , website : Maybe String
+    , website : Maybe Url
     }
 
 
@@ -147,7 +151,7 @@ type alias Volunteering =
     , position : Maybe String
     , startDate : Maybe String
     , summary : Maybe String
-    , website : Maybe String
+    , website : Maybe Url
     }
 
 
@@ -183,7 +187,7 @@ type alias Job =
     , position : Maybe String
     , startDate : Maybe String
     , summary : Maybe String
-    , website : Maybe String
+    , website : Maybe Url
     }
 
 
