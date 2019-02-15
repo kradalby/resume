@@ -8,6 +8,7 @@ import Json.Decode as Decode
 import Resume
 
 
+
 -- ---------------------------
 -- MODEL
 -- ---------------------------

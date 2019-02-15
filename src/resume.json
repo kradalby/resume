@@ -5,15 +5,14 @@
         "picture": "",
         "email": "kradalby@kradalby.no",
         "phone": "+47 456 73 429",
-        "whatsapp": "+47 456 73 429",
         "website": "https://kradalby.no",
         "summary": "",
         "location": {
-            "address": "Ole Aasveds veg 4",
-            "postalCode": "7049",
-            "city": "Trondheim",
-            "countryCode": "NO",
-            "region": "Sor-Trondelag"
+            "address": "",
+            "postalCode": "2312BZ",
+            "city": "Leiden",
+            "countryCode": "NL",
+            "region": "Zuid-Holland"
         },
         "profiles": [
             {
@@ -24,16 +23,21 @@
             {
                 "network": "linkedin",
                 "username": "kradalby",
-                "url": "http://www.linkedin.com/pub/kristoffer-dalby/61/599/611"
-            },
-            {
-                "network": "Twitter",
-                "username": "kradalby",
-                "url": "http://twitter.com/kradalby"
+                "url": "https://www.linkedin.com/pub/kristoffer-dalby/61/599/611"
             }
         ]
     },
     "work": [
+        {
+            "company": "European Space Agency",
+            "position": "Software Engineer - Trainee",
+            "website": "https://esa.int",
+            "startDate": "2017-09-01",
+            "endDate": "-",
+            "summary": "Fullstack developer working on internal platforms in ESA IT",
+            "highlights": [
+            ]
+        },
         {
             "company": "Knowit Objectnet",
             "position": "Developer - Summer intern",
@@ -56,138 +60,42 @@
         },
         {
             "company": "Norwegian University of Science and Technology",
-            "position": "Teaching assistant",
+            "position": "Teaching assistant, system administrator",
             "website": "http://ntnu.edu",
-            "startDate": "2015-08-25",
-            "endDate": "2015-12-31",
-            "summary": "Teaching assistant in the Web technology course IT2805. Responsibilities includes helping students, grading exercises and supporting the lecturer.",
+            "startDate": "2012-08-31",
+            "endDate": "2016-06-01",
+            "summary": "Various jobs throughout university, teaching and learning assistant, system administrator, IT support.",
             "highlights": [
-            ]
-        },
-        {
-            "company": "Norwegian University of Science and Technology",
-            "position": "Student assistant",
-            "website": "http://ntnu.edu",
-            "startDate": "2015-08-25",
-            "endDate": "2015-12-31",
-            "summary": "Student assistant in the Network and Service Management course TTM4128. Responsibilities includes helping students and support the lecturer.",
-            "highlights": [
-                "Held a practical presentation on the usage of Netconf: https://kradalby.no/presentations/ttm4128/netconf_2015"
-            ]
-        },
-        {
-            "company": "Studenttinget og Velferdstinget NTNU",
-            "position": "System administrator",
-            "website": "http://studenttinget.no",
-            "startDate": "2014-09-01",
-            "summary": "My responsibilities include managing the network, servers and printers. We use Windows, Linux and VMware ESX.",
-            "highlights": [
-            ]
-        },
-        {
-            "company": "Kavik AS",
-            "position": "Office and logistics",
-            "startDate": "2011-09-01",
-            "endDate": "2014-08-31",
-            "summary": "Responsible for goods delivery, invoicing and computer systems.",
-            "highlights": [
-                "Management of old COBOL storage system on Red Hat Linux."
-            ]
-        },
-        {
-            "company": "J & B Utstyr AS",
-            "position": "Handyman",
-            "startDate": "2009-06-15",
-            "endDate": "2011-08-15",
-            "summary": "Summer job with a lot of different maintenance tasks.",
-            "highlights": [
-            ]
-        },
-        {
-            "company": "Progym Sandefjord AS",
-            "position": "Receptionist",
-            "website": "http://progym.no",
-            "startDate": "2009-08-15",
-            "endDate": "2011-08-31",
-            "summary": "After school job with main focus on customer management. In addition i made sure the computer systems where working correctly. Currently, i still provide support if needed.",
-            "highlights": [
-                "Administration and configuration of card/membership system and MSSQL server"
             ]
         }
     ],
     "volunteer": [
         {
             "organization": "Student organization, Online",
-            "position": "System development and administration committee",
+            "position": "System administrator, economy, development",
             "website": "https://online.ntnu.no",
             "startDate": "2012-08-31",
-            "summary": "Member of the committee responsible for management and development of all the system used within Online, as well as mailinglist for a lot of volunteer organizations at NTNU.",
+            "endDate": "2016-06-01",
+            "summary": "Various position and responsibilities",
             "highlights": [
-                "Responsible for the mailing system which included: Postfix, Sympa, Amavis and Spamassassin.",
-                "Responsible for the economy of the commitee.",
-                "Shared responsibilty of 15+ Linux and Windows servers."
+                "Email administration",
+                "Economic management",
+                "Responsible for 15+ Linux and Windows servers",
+                "Planning US trip for 30+ students"
             ]
         },
         {
-            "organization": "The Gathering",
-            "position": "Info:Desk",
+            "organization": "Various LAN party organizations",
+            "position": "Various",
             "website": "http://gathering.org",
-            "startDate": "2013-03-01",
-            "endDate": "2014-05-31",
-            "summary": "Responsible for the participants check-in and the main information flow too all the participants.",
-            "highlights": [
-            ]
-        },
-        {
-            "organization": "dfekt LAN organization",
-            "position": "Leader",
-            "website": "https://dfektlan.no",
             "startDate": "2011-01-01",
-            "summary": "Responsible for all technical aspects as well as economy. Work as network architect and developer.",
+            "endDate": "",
+            "summary": "Worked with tech, network, economy and security. Parties ranged from 200 to 5000 participants.",
             "highlights": [
-                "Designed and implemented the network for each party.",
-                "Configured and managed the necessary services and servers.",
-                "Wrote most of the webpage, the Point of sale system and crew management system.",
-                "Responsible for the accounting and the books."
-            ]
-        },
-        {
-            "organization": "Student organization, Online",
-            "position": "Banking and finance committee",
-            "website": "https://online.ntnu.no",
-            "startDate": "2012-08-31",
-            "endDate": "2016-02-01",
-            "summary": "Responsible for the technical aspects of the economics systems, and the finance of the system development and administration committee.",
-            "highlights": [
-            ]
-        },
-        {
-            "organization": "Casual Gaming",
-            "position": "Tech Chief",
-            "website": "https://casualgaming.no",
-            "startDate": "2012-08-31",
-            "summary": "Responsible for building the network and maintaining the related services during LAN/Computer party events.",
-            "highlights": [
-                "As a team of two people we build the network infrastructure for 250+ participants."
-            ]
-        },
-        {
-            "organization": "Student organization, Online",
-            "position": "Excursion comitte",
-            "website": "https://online.ntnu.no",
-            "startDate": "2014-09-01",
-            "endDate": "2015-06-01",
-            "summary": "Responsible for the economomy of the 2015 trip and the maintenance of techtalks.no",
-            "highlights": [
-            ]
-        },
-        {
-            "organization": "PolarParty",
-            "position": "Tech",
-            "website": "http://polarparty.no",
-            "startDate": "2014-08-01",
-            "summary": "Member of a small team building the network for 600+ users.",
-            "highlights": [
+                "dfekt LAN: Leader and tech, 5 years",
+                "Casual gaming: Tech lead, 4 years",
+                "PolarParty: Tech/Network, 3 years",
+                "The Gathering: Information Desk, 2 years"
             ]
         }
     ],
@@ -217,33 +125,6 @@
             "endDate": "2015-06-15",
             "courses": [
             ]
-        },
-        {
-            "institution": "Sandefjord Videregående skole",
-            "area": "General studies",
-            "studyType": "High school",
-            "startDate": "2010-08-20",
-            "endDate": "2011-06-15",
-            "courses": [
-            ]
-        },
-        {
-            "institution": "Greveskogen videregående skole",
-            "area": "ICT Administration",
-            "studyType": "High school",
-            "startDate": "2009-08-20",
-            "endDate": "2010-06-15",
-            "courses": [
-            ]
-        },
-        {
-            "institution": "Sandefjord Videregående skole",
-            "area": "Service and economy studies",
-            "studyType": "High school",
-            "startDate": "2008-08-20",
-            "endDate": "2009-06-15",
-            "courses": [
-            ]
         }
     ],
     "skills": [
@@ -257,53 +138,6 @@
                 "Django",
                 "Python",
                 "Flask"
-            ]
-        },
-        {
-            "name": "Development",
-            "level": "Working knowledge",
-            "keywords": [
-                "Python",
-                "Java",
-                "Javascript",
-                "Swift",
-                "Erlang"
-            ]
-        },
-        {
-            "name": "Networking",
-            "level": "Working knowledge",
-            "keywords": [
-                "Python",
-                "Cisco",
-                "Juniper",
-                "SNMP",
-                "Netconf",
-                "Ubiquiti"
-            ]
-        },
-        {
-            "name": "*NIX administration",
-            "level": "Working knowledge",
-            "keywords": [
-                "Debian",
-                "FreeBSD",
-                "Shell scripting",
-                "XenServer",
-                "Vmware",
-                "Nginx",
-                "Ansible",
-                "Jenkins/Drone"
-            ]
-        },
-        {
-            "name": "Windows administration",
-            "level": "Intermediate knowledge",
-            "keywords": [
-                "Windows Server 2012 R2",
-                "Windows Server 2003",
-                "Active Directory",
-                "Print and file server"
             ]
         }
     ],
@@ -329,15 +163,11 @@
         {
             "name": "Traveling",
             "keywords": [
+                "Backpacking"
             ]
         },
         {
             "name": "Skiing",
-            "keywords": [
-            ]
-        },
-        {
-            "name": "Brewing",
             "keywords": [
             ]
         }
