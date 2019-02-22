@@ -1,5 +1,6 @@
 'use strict'
 
+require('typeface-open-sans')
 require('./styles.scss')
 
 const resume = require('./resume.json')

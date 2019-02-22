@@ -44,17 +44,24 @@ var common = {
       },
       {
         test: /\.css$/,
-        exclude: [/elm-stuff/, /node_modules/],
-        loaders: ['style-loader', 'css-loader?url=false']
+          // exclude: [/elm-stuff/, /node_modules/],
+        loaders: [
+            'style-loader', 
+            'css-loader'
+        ]
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        exclude: [/elm-stuff/, /node_modules/],
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          mimetype: 'application/font-woff'
-        }
+          // exclude: [/elm-stuff/, /node_modules/],
+        use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "[name].[ext]",
+                outputPath: "fonts/"
+              }
+            }
+        ]
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
