@@ -1,9 +1,11 @@
 module Main exposing (Model, Msg(..), init, main, update, view)
 
 import Browser
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+import Css exposing (..)
+import Html
+import Html.Styled exposing (..)
+import Html.Styled.Attributes exposing (class, css, href, src)
+import Html.Styled.Events exposing (onClick)
 import Json.Decode as Decode
 import Resume
 
@@ -19,6 +21,33 @@ type alias Model =
     }
 
 
+
+-- https://www.colourlovers.com/palette/1720852/Resume_Pallete_9
+
+
+theme : { secondary : Color, primary : Color, text : Color }
+theme =
+    { primary = hex "D5EBED"
+    , secondary = hex "FFFFFF"
+    , text = hex "404040"
+    }
+
+
+font : Float -> FontWeight a -> Style
+font size weight =
+    Css.batch
+        [ fontFamilies [ "Open Sans", "sans-serif" ]
+        , color theme.text
+        , fontSize (pt size)
+        , fontWeight weight
+        ]
+
+
+fontHeader : Style
+fontHeader =
+    font 20 bold
+
+
 init : Decode.Value -> ( Model, Cmd Msg )
 init flag =
     case Decode.decodeValue Resume.decoder flag of
@@ -27,6 +56,24 @@ init flag =
 
         Err err ->
             ( { resume = Nothing }, Cmd.none )
+
+
+
+-- Height of sheet
+
+
+h : Float
+h =
+    296
+
+
+
+-- Width of sheet
+
+
+w : Float
+w =
+    210
 
 
 
@@ -60,21 +107,53 @@ view model =
 
         Just resume ->
             div []
-                [ section [ class "sheet padding-10mm" ]
-                    [ article []
-                        [ viewMaybe viewBasics resume.basics
-                        , viewMaybe viewAwards resume.awards
-                        , viewMaybe viewEducations resume.education
-                        , viewMaybe viewInterests resume.interests
-                        , viewMaybe viewLanguages resume.languages
-                        , viewMaybe viewPublications resume.publications
-                        , viewMaybe viewReferences resume.references
-                        , viewMaybe viewSkills resume.skills
-                        , viewMaybe viewVolunteer resume.volunteer
-                        , viewMaybe viewWork resume.work
-                        ]
+                [ div [ class "sheet" ]
+                    [ viewLeft resume
+                    , viewRight resume
                     ]
+
+                -- [ article []
+                --     [
+                --     , viewMaybe viewAwards resume.awards
+                --     , viewMaybe viewEducations resume.education
+                --     , viewMaybe viewInterests resume.interests
+                --     , viewMaybe viewLanguages resume.languages
+                --     , viewMaybe viewPublications resume.publications
+                --     , viewMaybe viewReferences resume.references
+                --     , viewMaybe viewSkills resume.skills
+                --     , viewMaybe viewVolunteer resume.volunteer
+                --     , viewMaybe viewWork resume.work
+                --     ]
+                -- ]
                 ]
+
+
+viewLeft : Resume.Resume -> Html Msg
+viewLeft resume =
+    div
+        [ css
+            [ boxSizing borderBox
+            , display inlineBlock
+            , backgroundColor theme.primary
+            , height (mm h)
+            , width (mm (w * 0.35))
+            ]
+        ]
+        [ viewMaybe viewBasics resume.basics ]
+
+
+viewRight : Resume.Resume -> Html Msg
+viewRight resume =
+    div
+        [ css
+            [ boxSizing borderBox
+            , display inlineBlock
+            , backgroundColor theme.secondary
+            , height (mm h)
+            , width (mm (w * 0.65))
+            ]
+        ]
+        []
 
 
 viewMaybe : (msg -> Html Msg) -> Maybe msg -> Html Msg
@@ -330,16 +409,25 @@ viewJob job =
 viewBasics : Resume.Basics -> Html Msg
 viewBasics basics =
     div []
-        [ viewMaybe viewString basics.email
-        , viewMaybe viewString basics.label
-        , viewMaybe viewString basics.name
-        , viewMaybe viewString basics.phone
-        , viewMaybe viewString basics.picture
-        , viewMaybe viewString basics.summary
-        , viewMaybe viewString basics.website
-        , viewMaybe viewLocation basics.location
-        , viewMaybe viewProfiles basics.profiles
-        ]
+        [ viewMaybe viewName basics.name ]
+
+
+
+-- [ viewMaybe viewString basics.email
+-- , viewMaybe viewString basics.label
+-- ,
+-- , viewMaybe viewString basics.phone
+-- , viewMaybe viewString basics.picture
+-- , viewMaybe viewString basics.summary
+-- , viewMaybe viewString basics.website
+-- , viewMaybe viewLocation basics.location
+-- , viewMaybe viewProfiles basics.profiles
+-- ]
+
+
+viewName : String -> Html Msg
+viewName name =
+    h1 [ css [ fontHeader ] ] [ text name ]
 
 
 viewString : String -> Html Msg
@@ -387,7 +475,9 @@ main =
         { init = init
         , update = update
         , view =
-            \msg ->
+            (\msg ->
                 view msg
+            )
+                >> toUnstyled
         , subscriptions = \_ -> Sub.none
         }
