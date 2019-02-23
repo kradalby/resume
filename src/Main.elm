@@ -109,6 +109,7 @@ viewRight resume =
             , height (mm h)
             , width (mm rightWidth)
             , padding (mm 10)
+            , float right
             ]
         ]
         [ viewMaybe viewWork resume.work ]
@@ -366,8 +367,11 @@ viewJob job =
 
         endDate =
             Maybe.withDefault "" job.endDate
+
+        company =
+            Maybe.withDefault "" job.company
     in
-    entry position summary website startDate endDate
+    entry position summary website company startDate endDate
 
 
 

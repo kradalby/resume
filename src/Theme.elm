@@ -74,10 +74,11 @@ bBox =
 hs :
     (List (Attribute msg) -> List (Html msg) -> Html msg)
     -> String
+    -> Style
     -> Float
     -> FontWeight a
     -> Html msg
-hs hNode title size weight =
+hs hNode title style size weight =
     let
         underlineCount =
             4
@@ -94,7 +95,7 @@ hs hNode title size weight =
     hNode
         [ css
             [ font size weight
-            , paddingBottom (mm 5)
+            , style
             , bBox
             ]
         ]
@@ -112,21 +113,39 @@ hs hNode title size weight =
 
 h1s : String -> Html msg
 h1s title =
-    hs h1 title 18 (int 600)
+    let
+        style =
+            Css.batch
+                [ paddingBottom (mm 5)
+                ]
+    in
+    hs h1 title style 18 (int 600)
 
 
 h2s : String -> Html msg
 h2s title =
-    hs h2 title 16 (int 600)
+    let
+        style =
+            Css.batch
+                [ paddingBottom (mm 6)
+                ]
+    in
+    hs h2 title style 16 (int 600)
 
 
 h3s : String -> Html msg
 h3s title =
-    hs h3 title 12 (int 500)
+    let
+        style =
+            Css.batch
+                [ paddingBottom (mm 3)
+                ]
+    in
+    hs h3 title style 12 (int 500)
 
 
-entry : String -> String -> String -> String -> String -> Html msg
-entry title desc url from to =
+entry : String -> String -> String -> String -> String -> String -> Html msg
+entry title desc url company from to =
     let
         spacing =
             Css.batch
@@ -135,17 +154,34 @@ entry title desc url from to =
 
         dateStyle =
             Css.batch
-                [ font 12 (int 400)
+                [ font 11 (int 400)
                 , fontStyle italic
                 , bBox
                 , float right
                 ]
+
+        companyStyle =
+            Css.batch
+                [ font 11 (int 400)
+                , bBox
+                , float left
+                ]
     in
-    div []
+    div [ css [ marginBottom (mm 10) ] ]
         [ h3s title
         , h5 [ css [ dateStyle ] ]
             [ span [ css [ spacing ] ] [ text from ]
             , span [ css [ spacing ] ] [ text "-" ]
             , span [ css [ spacing ] ] [ text to ]
+            ]
+        , h5 [ css [ companyStyle ] ]
+            [ a
+                [ href url
+                , css
+                    [ textDecoration none
+                    , color theme.text
+                    ]
+                ]
+                [ text company ]
             ]
         ]
