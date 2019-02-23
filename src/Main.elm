@@ -77,7 +77,6 @@ view model =
                 --     , viewMaybe viewPublications resume.publications
                 --     , viewMaybe viewReferences resume.references
                 --     , viewMaybe viewSkills resume.skills
-                --     , viewMaybe viewVolunteer resume.volunteer
                 --     , viewMaybe viewWork resume.work
                 --     ]
                 -- ]
@@ -112,7 +111,9 @@ viewRight resume =
             , float right
             ]
         ]
-        [ viewMaybe viewWork resume.work ]
+        [ viewMaybe viewWork resume.work
+        , viewMaybe viewVolunteer resume.volunteer
+        ]
 
 
 viewMaybe : (msg -> Html Msg) -> Maybe msg -> Html Msg
@@ -313,20 +314,41 @@ viewSkill skill =
 
 viewVolunteer : Resume.Volunteer -> Html Msg
 viewVolunteer volunteer =
-    div [] <| List.map viewVolunteering volunteer
+    let
+        entries =
+            List.map viewVolunteering volunteer
+    in
+    div
+        [ css [ paddingBottom (mm 7) ]
+        ]
+    <|
+        [ h2s "Volunteering"
+        ]
+            ++ entries
 
 
 viewVolunteering : Resume.Volunteering -> Html Msg
 viewVolunteering volunteer =
-    div []
-        [ viewMaybe viewString volunteer.startDate
-        , viewMaybe viewString volunteer.endDate
-        , viewMaybe viewHighlights volunteer.highlights
-        , viewMaybe viewString volunteer.organization
-        , viewMaybe viewString volunteer.position
-        , viewMaybe viewString volunteer.summary
-        , viewMaybe viewString volunteer.website
-        ]
+    let
+        position =
+            Maybe.withDefault "" volunteer.position
+
+        summary =
+            Maybe.withDefault "" volunteer.summary
+
+        website =
+            Maybe.withDefault "" volunteer.website
+
+        startDate =
+            Maybe.withDefault "" volunteer.startDate
+
+        endDate =
+            Maybe.withDefault "" volunteer.endDate
+
+        organization =
+            Maybe.withDefault "" volunteer.organization
+    in
+    entry position summary website organization startDate endDate
 
 
 
@@ -344,7 +366,10 @@ viewWork jobs =
         entries =
             List.map viewJob jobs
     in
-    div [] <|
+    div
+        [ css [ paddingBottom (mm 7) ]
+        ]
+    <|
         [ h2s "Work"
         ]
             ++ entries

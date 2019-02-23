@@ -119,7 +119,7 @@ h1s title =
                 [ paddingBottom (mm 5)
                 ]
     in
-    hs h1 title style 18 (int 600)
+    hs h1 title style 20 (int 600)
 
 
 h2s : String -> Html msg
