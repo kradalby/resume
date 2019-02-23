@@ -1,7 +1,7 @@
 {
     "basics": {
         "name": "Kristoffer Dalby",
-        "label": "Programmer / Networking / System administrator",
+        "label": "Software Engineer",
         "picture": "",
         "email": "kradalby@kradalby.no",
         "phone": "+47 456 73 429",
@@ -32,8 +32,8 @@
             "company": "European Space Agency",
             "position": "Software Engineer - Trainee",
             "website": "https://esa.int",
-            "startDate": "2017-09-01",
-            "endDate": "-",
+            "startDate": "2017-09",
+            "endDate": "present",
             "summary": "Fullstack developer working on internal platforms in ESA IT",
             "highlights": [
             ]
@@ -42,8 +42,8 @@
             "company": "Knowit Objectnet",
             "position": "Developer - Summer intern",
             "website": "http://knowit.no",
-            "startDate": "2016-06-20",
-            "endDate": "2016-08-12",
+            "startDate": "2016-06",
+            "endDate": "2016-08",
             "summary": "Fullstack developer creating SaaS applications in Scala and React.",
             "highlights": [
             ]
@@ -52,18 +52,18 @@
             "company": "Uninett Sigma2 AS",
             "position": "Developer - Summer intern",
             "website": "http://uninett.no",
-            "startDate": "2015-06-22",
-            "endDate": "2015-08-21",
+            "startDate": "2015-06",
+            "endDate": "2015-08",
             "summary": "Research and development of a web based terminal application for usage and administration of high performance clusters.",
             "highlights": [
             ]
         },
         {
             "company": "Norwegian University of Science and Technology",
-            "position": "Teaching assistant, system administrator",
+            "position": "Teaching assistant",
             "website": "http://ntnu.edu",
-            "startDate": "2012-08-31",
-            "endDate": "2016-06-01",
+            "startDate": "2012-08",
+            "endDate": "2016-06",
             "summary": "Various jobs throughout university, teaching and learning assistant, system administrator, IT support.",
             "highlights": [
             ]
@@ -74,8 +74,8 @@
             "organization": "Student organization, Online",
             "position": "System administrator, economy, development",
             "website": "https://online.ntnu.no",
-            "startDate": "2012-08-31",
-            "endDate": "2016-06-01",
+            "startDate": "2012-08",
+            "endDate": "2016-06",
             "summary": "Various position and responsibilities",
             "highlights": [
                 "Email administration",
@@ -88,8 +88,8 @@
             "organization": "Various LAN party organizations",
             "position": "Various",
             "website": "http://gathering.org",
-            "startDate": "2011-01-01",
-            "endDate": "",
+            "startDate": "2011-01",
+            "endDate": "present",
             "summary": "Worked with tech, network, economy and security. Parties ranged from 200 to 5000 participants.",
             "highlights": [
                 "dfekt LAN: Leader and tech, 5 years",
@@ -104,7 +104,8 @@
             "institution": "Norwegian University of Science and Technology",
             "area": "Informatics",
             "studyType": "Master",
-            "startDate": "2015-08-12",
+            "startDate": "2012-08",
+            "endDate": "2017-06",
             "courses": [
             ]
         },
@@ -112,17 +113,8 @@
             "institution": "Universidad Politécnica de Madrid",
             "area": "Software Engineering",
             "studyType": "Exchange",
-            "startDate": "2016-02-01",
-            "endDate": "2016-06-17",
-            "courses": [
-            ]
-        },
-        {
-            "institution": "Norwegian University of Science and Technology",
-            "area": "Informatics",
-            "studyType": "Bachelor",
-            "startDate": "2012-08-12",
-            "endDate": "2015-06-15",
+            "startDate": "2016-01",
+            "endDate": "2016-06",
             "courses": [
             ]
         }

@@ -8,6 +8,7 @@ import Html.Styled.Attributes exposing (class, css, href, src)
 import Html.Styled.Events exposing (onClick)
 import Json.Decode as Decode
 import Resume
+import Theme exposing (..)
 
 
 
@@ -21,33 +22,6 @@ type alias Model =
     }
 
 
-
--- https://www.colourlovers.com/palette/1720852/Resume_Pallete_9
-
-
-theme : { secondary : Color, primary : Color, text : Color }
-theme =
-    { primary = hex "D5EBED"
-    , secondary = hex "FFFFFF"
-    , text = hex "404040"
-    }
-
-
-font : Float -> FontWeight a -> Style
-font size weight =
-    Css.batch
-        [ fontFamilies [ "Open Sans", "sans-serif" ]
-        , color theme.text
-        , fontSize (pt size)
-        , fontWeight weight
-        ]
-
-
-fontHeader : Style
-fontHeader =
-    font 20 bold
-
-
 init : Decode.Value -> ( Model, Cmd Msg )
 init flag =
     case Decode.decodeValue Resume.decoder flag of
@@ -56,24 +30,6 @@ init flag =
 
         Err err ->
             ( { resume = Nothing }, Cmd.none )
-
-
-
--- Height of sheet
-
-
-h : Float
-h =
-    296
-
-
-
--- Width of sheet
-
-
-w : Float
-w =
-    210
 
 
 
@@ -136,7 +92,8 @@ viewLeft resume =
             , display inlineBlock
             , backgroundColor theme.primary
             , height (mm h)
-            , width (mm (w * 0.35))
+            , width (mm leftWidth)
+            , padding (mm 10)
             ]
         ]
         [ viewMaybe viewBasics resume.basics ]
@@ -150,10 +107,11 @@ viewRight resume =
             , display inlineBlock
             , backgroundColor theme.secondary
             , height (mm h)
-            , width (mm (w * 0.65))
+            , width (mm rightWidth)
+            , padding (mm 10)
             ]
         ]
-        []
+        [ viewMaybe viewWork resume.work ]
 
 
 viewMaybe : (msg -> Html Msg) -> Maybe msg -> Html Msg
@@ -381,23 +339,47 @@ viewVolunteering volunteer =
 
 viewWork : Resume.Work -> Html Msg
 viewWork jobs =
-    div [] <| List.map viewJob jobs
+    let
+        entries =
+            List.map viewJob jobs
+    in
+    div [] <|
+        [ h2s "Work"
+        ]
+            ++ entries
 
 
 viewJob : Resume.Job -> Html Msg
 viewJob job =
-    div []
-        [ viewMaybe viewString job.company
-        , viewMaybe viewString job.startDate
-        , viewMaybe viewString job.endDate
-        , viewMaybe viewString job.position
-        , viewMaybe viewString job.summary
-        , viewMaybe viewString job.website
-        , viewMaybe viewHighlights job.highlights
-        ]
+    let
+        position =
+            Maybe.withDefault "" job.position
+
+        summary =
+            Maybe.withDefault "" job.summary
+
+        website =
+            Maybe.withDefault "" job.website
+
+        startDate =
+            Maybe.withDefault "" job.startDate
+
+        endDate =
+            Maybe.withDefault "" job.endDate
+    in
+    entry position summary website startDate endDate
 
 
 
+-- div []
+--     [ viewMaybe viewString job.company
+--     , viewMaybe viewString job.startDate
+--     , viewMaybe viewString job.endDate
+--     , viewMaybe viewString job.position
+--     , viewMaybe viewString job.summary
+--     , viewMaybe viewString job.website
+--     , viewMaybe viewHighlights job.highlights
+--     ]
 -- -----------------------------------------------
 -- END Work
 -- -----------------------------------------------
@@ -408,7 +390,13 @@ viewJob job =
 
 viewBasics : Resume.Basics -> Html Msg
 viewBasics basics =
-    div []
+    div
+        [ css
+            [ boxSizing borderBox
+            , width (pct 100)
+            , display inlineBlock
+            ]
+        ]
         [ viewMaybe viewName basics.name ]
 
 
@@ -427,7 +415,7 @@ viewBasics basics =
 
 viewName : String -> Html Msg
 viewName name =
-    h1 [ css [ fontHeader ] ] [ text name ]
+    h1s name
 
 
 viewString : String -> Html Msg
