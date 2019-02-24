@@ -5,7 +5,7 @@ import css from './styles.scss'
 
 // FONT AWESOME
 import { library, dom } from '@fortawesome/fontawesome-svg-core'
-import { faEnvelope, faPhone, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPhone, faGlobe, faSkiingNordic, faFlagUsa } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faTwitter, faWhatsapp, faTelegram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 
@@ -13,6 +13,8 @@ library.add(
     faEnvelope,
     faPhone,
     faGlobe,
+    faSkiingNordic,
+    faFlagUsa,
     faGithub,
     faTwitter,
     faWhatsapp,
@@ -20,7 +22,7 @@ library.add(
     faLinkedin
 )
 // This will look continously to convert i-fa to svg
-// dom.watch()
+dom.watch()
 
 import  resume from './resume.json'
 const {Elm} = require('./Main')
@@ -32,5 +34,3 @@ let app = Elm.Main.init({
   node: document.getElementById('app')
 })
 
-// Batch convert all <i> tags to svg icons
-dom.i2svg()

@@ -1,4 +1,4 @@
-module Theme exposing (bBox, email, entry, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, iconPadding, leftWidth, linkedin, phone, rightWidth, telegram, theme, twitter, w, whatsapp)
+module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, iconPadding, language, leftWidth, linkedin, phone, rightWidth, telegram, theme, twitter, w, whatsapp)
 
 import Css exposing (..)
 import Html
@@ -63,10 +63,18 @@ header =
     font 18 (int 600)
 
 
-bBox : Style
-bBox =
+bBoxInline : Style
+bBoxInline =
     Css.batch
         [ display inlineBlock
+        , boxSizing borderBox
+        ]
+
+
+bBoxBlock : Style
+bBoxBlock =
+    Css.batch
+        [ display block
         , boxSizing borderBox
         ]
 
@@ -97,7 +105,6 @@ hs hNode title style borderCol size weight =
         [ css
             [ font size weight
             , style
-            , bBox
             ]
         ]
         [ span
@@ -118,6 +125,7 @@ h1s title borderColor =
         style =
             Css.batch
                 [ paddingBottom (mm 5)
+                , bBoxBlock
                 ]
     in
     hs h1 title style borderColor 20 (int 600)
@@ -129,6 +137,7 @@ h2s title borderColor =
         style =
             Css.batch
                 [ paddingBottom (mm 6)
+                , bBoxBlock
                 ]
     in
     hs h2 title style borderColor 16 (int 600)
@@ -140,6 +149,7 @@ h3s title borderColor =
         style =
             Css.batch
                 [ paddingBottom (mm 3)
+                , bBoxInline
                 ]
     in
     hs h3 title style borderColor 12 (int 500)
@@ -175,8 +185,8 @@ h3l title =
     h3s title theme.text
 
 
-entry : String -> String -> String -> String -> String -> String -> Html msg
-entry title desc url company from to =
+date : String -> String -> Html msg
+date from to =
     let
         spacing =
             Css.batch
@@ -187,24 +197,30 @@ entry title desc url company from to =
             Css.batch
                 [ font 11 (int 400)
                 , fontStyle italic
-                , bBox
+                , bBoxInline
                 , float right
                 ]
+    in
+    h5 [ css [ dateStyle ] ]
+        [ span [ css [ spacing ] ] [ text from ]
+        , span [ css [ spacing ] ] [ text "-" ]
+        , span [ css [ spacing ] ] [ text to ]
+        ]
 
+
+entry : String -> String -> String -> String -> String -> String -> Html msg
+entry title desc url company from to =
+    let
         companyStyle =
             Css.batch
                 [ font 11 (int 400)
-                , bBox
+                , bBoxInline
                 , float left
                 ]
     in
     div [ css [ marginBottom (mm 10) ] ]
         [ h3r title
-        , h5 [ css [ dateStyle ] ]
-            [ span [ css [ spacing ] ] [ text from ]
-            , span [ css [ spacing ] ] [ text "-" ]
-            , span [ css [ spacing ] ] [ text to ]
-            ]
+        , date from to
         , h5 [ css [ companyStyle ] ]
             [ a
                 [ href url
@@ -218,6 +234,16 @@ entry title desc url company from to =
         ]
 
 
+edu : String -> String -> String -> String -> String -> Html msg
+edu institution studyType area from to =
+    div [ css [ width (pct 50), bBoxInline ] ]
+        [ h5s area
+        , h5s studyType
+        , date from to
+        , h5s institution
+        ]
+
+
 iconPadding : Style
 iconPadding =
     Css.batch [ paddingRight (mm 1.1) ]
@@ -228,8 +254,8 @@ h5s title =
     h5
         [ css
             [ font 11 (int 400)
-            , bBox
-            , paddingBottom (mm 2)
+            , bBoxInline
+            , paddingBottom (mm 3)
             ]
         ]
         [ text
@@ -244,7 +270,7 @@ fontAwesomeIcon faIcon =
 
 h5sWithFontAwesome : String -> String -> Html msg
 h5sWithFontAwesome title faIcon =
-    span [ css [ bBox ] ]
+    span [ css [ bBoxInline ] ]
         [ fontAwesomeIcon faIcon
         , h5s title
         ]
@@ -302,3 +328,12 @@ whatsapp num =
 telegram : String -> Html msg
 telegram num =
     h5sWithFontAwesome num (faBrand "telegram")
+
+
+language : String -> String -> Html msg -> Html msg
+language lang fluency icon =
+    span [ css [ bBoxInline, width (pct 100) ] ]
+        [ icon
+        , h5s lang
+        , span [ css [ float right, fontStyle italic ] ] [ h5s fluency ]
+        ]

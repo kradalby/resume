@@ -95,7 +95,9 @@ viewLeft resume =
             , padding (mm 10)
             ]
         ]
-        [ viewMaybe viewBasics resume.basics ]
+        [ viewMaybe viewBasics resume.basics
+        , viewMaybe viewLanguages resume.languages
+        ]
 
 
 viewRight : Resume.Resume -> Html Msg
@@ -112,6 +114,7 @@ viewRight resume =
             ]
         ]
         [ viewMaybe viewWork resume.work
+        , viewMaybe viewEducations resume.education
         , viewMaybe viewVolunteer resume.volunteer
         ]
 
@@ -168,20 +171,38 @@ viewAward award =
 
 viewEducations : Resume.Educations -> Html Msg
 viewEducations educations =
-    div [] <| List.map viewEducation educations
+    let
+        entries =
+            List.map viewEducation educations
+    in
+    div
+        [ css [ paddingBottom (mm 7) ]
+        ]
+    <|
+        [ h2r "Educations"
+        ]
+            ++ entries
 
 
 viewEducation : Resume.Education -> Html Msg
 viewEducation education =
-    div []
-        [ viewMaybe viewString education.area
-        , viewMaybe viewString education.startDate
-        , viewMaybe viewString education.endDate
-        , viewMaybe viewString education.gpa
-        , viewMaybe viewString education.institution
-        , viewMaybe viewString education.studyType
-        , viewMaybe viewCourses education.courses
-        ]
+    let
+        institution =
+            Maybe.withDefault "" education.institution
+
+        studyType =
+            Maybe.withDefault "" education.studyType
+
+        area =
+            Maybe.withDefault "" education.area
+
+        startDate =
+            Maybe.withDefault "" education.startDate
+
+        endDate =
+            Maybe.withDefault "" education.endDate
+    in
+    edu institution studyType area startDate endDate
 
 
 viewCourses : Resume.Courses -> Html Msg
@@ -222,15 +243,37 @@ viewInterest interest =
 
 viewLanguages : Resume.Languages -> Html Msg
 viewLanguages languages =
-    div [] <| List.map viewLanguage languages
+    let
+        entries =
+            List.map viewLanguage languages
+    in
+    div [] <|
+        [ h2l "Languages"
+        ]
+            ++ entries
 
 
 viewLanguage : Resume.Language -> Html Msg
 viewLanguage language =
-    div []
-        [ viewMaybe viewString language.fluency
-        , viewMaybe viewString language.language
-        ]
+    let
+        lang =
+            Maybe.withDefault "" language.language
+
+        fluency =
+            Maybe.withDefault "" language.fluency
+
+        icon =
+            case String.toLower lang of
+                "english" ->
+                    "flag-usa"
+
+                "norwegian" ->
+                    "skiing-nordic"
+
+                _ ->
+                    ""
+    in
+    Theme.language lang fluency (fontAwesomeIcon <| faSolid icon)
 
 
 
@@ -370,7 +413,7 @@ viewWork jobs =
         [ css [ paddingBottom (mm 7) ]
         ]
     <|
-        [ h2r "Work"
+        [ h2r "Experience"
         ]
             ++ entries
 
