@@ -18,12 +18,12 @@
             {
                 "network": "GitHub",
                 "username": "kradalby",
-                "url": "https://github.com/kradalby/"
+                "url": "github.com/kradalby"
             },
             {
                 "network": "linkedin",
                 "username": "kradalby",
-                "url": "https://www.linkedin.com/pub/kristoffer-dalby/61/599/611"
+                "url": "linkedin.com/in/kradalby"
             }
         ]
     },
@@ -39,7 +39,7 @@
             ]
         },
         {
-            "company": "Knowit Objectnet",
+            "company": "Knowit Objectnet AS",
             "position": "Developer - Summer intern",
             "website": "http://knowit.no",
             "startDate": "2016-06",

@@ -322,7 +322,7 @@ viewVolunteer volunteer =
         [ css [ paddingBottom (mm 7) ]
         ]
     <|
-        [ h2s "Volunteering"
+        [ h2r "Volunteering"
         ]
             ++ entries
 
@@ -370,7 +370,7 @@ viewWork jobs =
         [ css [ paddingBottom (mm 7) ]
         ]
     <|
-        [ h2s "Work"
+        [ h2r "Work"
         ]
             ++ entries
 
@@ -426,7 +426,10 @@ viewBasics basics =
             , display inlineBlock
             ]
         ]
-        [ viewMaybe viewName basics.name ]
+        [ viewMaybe viewName basics.name
+        , viewMaybe viewLabel basics.label
+        , viewContact basics
+        ]
 
 
 
@@ -444,7 +447,25 @@ viewBasics basics =
 
 viewName : String -> Html Msg
 viewName name =
-    h1s name
+    h1l name
+
+
+viewLabel : String -> Html Msg
+viewLabel label =
+    h3l label
+
+
+viewContact : Resume.Basics -> Html Msg
+viewContact basics =
+    div []
+        [ h2l "Contact"
+        , viewMaybe viewLocation basics.location
+        , viewMaybe email basics.email
+        , viewMaybe phone basics.phone
+        , viewMaybe whatsapp basics.phone
+        , viewMaybe telegram basics.phone
+        , viewMaybe viewProfiles basics.profiles
+        ]
 
 
 viewString : String -> Html Msg
@@ -454,13 +475,40 @@ viewString str =
 
 viewLocation : Resume.Location -> Html Msg
 viewLocation location =
-    div []
-        [ viewMaybe viewString location.address
-        , viewMaybe viewString location.city
-        , viewMaybe viewString location.countryCode
-        , viewMaybe viewString location.postalCode
-        , viewMaybe viewString location.region
-        ]
+    let
+        place =
+            case ( location.city, location.countryCode ) of
+                ( Nothing, Nothing ) ->
+                    ""
+
+                ( Just city, Nothing ) ->
+                    city
+
+                ( Nothing, Just countryCode ) ->
+                    countryCodeToCountry countryCode
+
+                ( Just city, Just countryCode ) ->
+                    city
+                        ++ ", "
+                        ++ countryCodeToCountry countryCode
+    in
+    globe place
+
+
+countryCodeToCountry : String -> String
+countryCodeToCountry countryCode =
+    case countryCode of
+        "NL" ->
+            "Netherlands"
+
+        "NO" ->
+            "Norway"
+
+        "UK" ->
+            "United Kingdom"
+
+        _ ->
+            "Unknown country code"
 
 
 viewProfiles : Resume.Profiles -> Html Msg
@@ -470,11 +518,20 @@ viewProfiles profiles =
 
 viewProfile : Resume.Profile -> Html Msg
 viewProfile profile =
-    div []
-        [ viewMaybe viewString profile.network
-        , viewMaybe viewString profile.url
-        , viewMaybe viewString profile.username
-        ]
+    let
+        network =
+            Maybe.withDefault "" profile.network
+                |> String.toLower
+    in
+    case network of
+        "github" ->
+            viewMaybe github profile.url
+
+        "linkedin" ->
+            viewMaybe linkedin profile.url
+
+        _ ->
+            text ""
 
 
 
