@@ -224,7 +224,7 @@ entry title desc url company from to =
         companyStyle =
             Css.batch
                 [ font 11 (int 400)
-                , bBoxInline
+                , bBoxBlock
 
                 -- , float left
                 ]
