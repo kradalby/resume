@@ -247,6 +247,7 @@ entry title desc url company from to =
         , p
             [ css
                 [ font 10 (int 300)
+                , lineHeight (pt 13)
                 ]
             ]
             [ text desc ]
