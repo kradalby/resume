@@ -176,10 +176,10 @@ viewEducations educations =
             List.map viewEducation educations
     in
     div
-        [ css [ paddingBottom (mm 7) ]
+        [ css [ mbElement ]
         ]
     <|
-        [ h2r "Educations"
+        [ h2r "Education"
         ]
             ++ entries
 
@@ -362,7 +362,7 @@ viewVolunteer volunteer =
             List.map viewVolunteering volunteer
     in
     div
-        [ css [ paddingBottom (mm 7) ]
+        [ css [ mbElement ]
         ]
     <|
         [ h2r "Volunteering"
@@ -410,7 +410,7 @@ viewWork jobs =
             List.map viewJob jobs
     in
     div
-        [ css [ paddingBottom (mm 7) ]
+        [ css [ mbElement ]
         ]
     <|
         [ h2r "Experience"
@@ -495,12 +495,12 @@ viewName name =
 
 viewLabel : String -> Html Msg
 viewLabel label =
-    h3l label
+    span [ css [ mbElement, bBoxBlock ] ] [ h3l label ]
 
 
 viewContact : Resume.Basics -> Html Msg
 viewContact basics =
-    div []
+    div [ css [ mbElement ] ]
         [ h2l "Contact"
         , viewMaybe viewLocation basics.location
         , viewMaybe email basics.email

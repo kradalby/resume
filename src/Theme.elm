@@ -1,4 +1,4 @@
-module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, iconPadding, language, leftWidth, linkedin, phone, rightWidth, telegram, theme, twitter, w, whatsapp)
+module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, language, leftWidth, linkedin, mbElement, mbItem, phone, rightWidth, spacing, telegram, theme, twitter, w, whatsapp)
 
 import Css exposing (..)
 import Html
@@ -34,6 +34,21 @@ leftWidth =
 rightWidth : Float
 rightWidth =
     w * 0.65
+
+
+mbItem : Style
+mbItem =
+    marginBottom (mm 6)
+
+
+mbElement : Style
+mbElement =
+    marginBottom (mm 10)
+
+
+spacing : Style
+spacing =
+    marginRight (mm 1.1)
 
 
 
@@ -124,7 +139,7 @@ h1s title borderColor =
     let
         style =
             Css.batch
-                [ paddingBottom (mm 5)
+                [ marginBottom (mm 5)
                 , bBoxBlock
                 ]
     in
@@ -136,7 +151,7 @@ h2s title borderColor =
     let
         style =
             Css.batch
-                [ paddingBottom (mm 6)
+                [ marginBottom (mm 6)
                 , bBoxBlock
                 ]
     in
@@ -148,7 +163,7 @@ h3s title borderColor =
     let
         style =
             Css.batch
-                [ paddingBottom (mm 3)
+                [ marginBottom (mm 3)
                 , bBoxInline
                 ]
     in
@@ -188,11 +203,6 @@ h3l title =
 date : String -> String -> Html msg
 date from to =
     let
-        spacing =
-            Css.batch
-                [ paddingRight (mm 1.5)
-                ]
-
         dateStyle =
             Css.batch
                 [ font 11 (int 400)
@@ -215,10 +225,11 @@ entry title desc url company from to =
             Css.batch
                 [ font 11 (int 400)
                 , bBoxInline
-                , float left
+
+                -- , float left
                 ]
     in
-    div [ css [ marginBottom (mm 10) ] ]
+    div [ css [ mbItem ] ]
         [ h3r title
         , date from to
         , h5 [ css [ companyStyle ] ]
@@ -237,16 +248,11 @@ entry title desc url company from to =
 edu : String -> String -> String -> String -> String -> Html msg
 edu institution studyType area from to =
     div [ css [ width (pct 50), bBoxInline ] ]
-        [ h5s area
-        , h5s studyType
-        , date from to
-        , h5s institution
+        [ h3r area
+        , span [ css [ bBoxBlock ] ] [ h5s studyType ]
+        , span [ css [ bBoxBlock, width (pct 90) ] ] [ h5s institution ]
+        , span [ css [ float left ] ] [ date from to ]
         ]
-
-
-iconPadding : Style
-iconPadding =
-    Css.batch [ paddingRight (mm 1.1) ]
 
 
 h5s : String -> Html msg
@@ -255,7 +261,7 @@ h5s title =
         [ css
             [ font 11 (int 400)
             , bBoxInline
-            , paddingBottom (mm 3)
+            , marginBottom (mm 3)
             ]
         ]
         [ text
@@ -265,7 +271,7 @@ h5s title =
 
 fontAwesomeIcon : String -> Html msg
 fontAwesomeIcon faIcon =
-    i [ class faIcon, css [ iconPadding ] ] []
+    i [ class faIcon, css [ spacing, color theme.text ] ] []
 
 
 h5sWithFontAwesome : String -> String -> Html msg
