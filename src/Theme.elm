@@ -238,10 +238,18 @@ entry title desc url company from to =
                 , css
                     [ textDecoration none
                     , color theme.text
+                    , bBoxBlock
+                    , marginBottom (mm 1.5)
                     ]
                 ]
                 [ text company ]
             ]
+        , p
+            [ css
+                [ font 10 (int 300)
+                ]
+            ]
+            [ text desc ]
         ]
 
 
