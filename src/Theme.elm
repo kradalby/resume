@@ -1,4 +1,4 @@
-module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, language, leftWidth, linkedin, mbElement, mbItem, phone, rightWidth, spacing, telegram, theme, twitter, w, whatsapp)
+module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, interest, keywords, language, leftWidth, linkedin, mbElement, mbItem, phone, rightWidth, skill, spacing, telegram, theme, twitter, w, whatsapp)
 
 import Css exposing (..)
 import Html
@@ -345,10 +345,71 @@ telegram num =
     h5sWithFontAwesome num (faBrand "telegram")
 
 
-language : String -> String -> Html msg -> Html msg
-language lang fluency icon =
+language : String -> String -> Html msg
+language lang fluency =
+    let
+        iconName =
+            case String.toLower lang of
+                "english" ->
+                    "flag-usa"
+
+                "norwegian" ->
+                    "skiing-nordic"
+
+                _ ->
+                    ""
+
+        icon =
+            fontAwesomeIcon <| faSolid iconName
+    in
     span [ css [ bBoxInline, width (pct 100) ] ]
         [ icon
         , h5s lang
         , span [ css [ float right, fontStyle italic ] ] [ h5s fluency ]
         ]
+
+
+interest : String -> Html msg
+interest lang =
+    let
+        iconName =
+            case String.toLower lang of
+                "brewing" ->
+                    "beer"
+
+                "skiing" ->
+                    "skiing-nordic"
+
+                "traveling" ->
+                    "traveling"
+
+                "lan parties" ->
+                    "computer"
+
+                "photography" ->
+                    "photo"
+
+                _ ->
+                    ""
+
+        icon =
+            fontAwesomeIcon <| faSolid iconName
+    in
+    span [ css [ bBoxInline, spacing ] ]
+        [ icon
+        , h5s lang
+        ]
+
+
+skill : String -> String -> List String -> Html msg
+skill name level ks =
+    div [ css [ bBoxInline ] ]
+        [ h3l name
+        , span [ css [ bBoxBlock ] ] [ h5s level ]
+        , keywords ks
+        ]
+
+
+keywords : List String -> Html msg
+keywords ks =
+    div [] []

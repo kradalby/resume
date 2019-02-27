@@ -96,7 +96,9 @@ viewLeft resume =
             ]
         ]
         [ viewMaybe viewBasics resume.basics
+        , viewMaybe viewSkills resume.skills
         , viewMaybe viewLanguages resume.languages
+        , viewMaybe viewInterests resume.interests
         ]
 
 
@@ -221,15 +223,23 @@ viewCourses courses =
 
 viewInterests : Resume.Interests -> Html Msg
 viewInterests interests =
-    div [] <| List.map viewInterest interests
+    let
+        entries =
+            List.map viewInterest interests
+    in
+    div [ css [ mbElement ] ] <|
+        [ h2l "Interests"
+        ]
+            ++ entries
 
 
 viewInterest : Resume.Interest -> Html Msg
 viewInterest interest =
-    div []
-        [ viewMaybe viewString interest.name
-        , viewMaybe viewKeywords interest.keywords
-        ]
+    let
+        name =
+            Maybe.withDefault "" interest.name
+    in
+    Theme.interest name
 
 
 
@@ -247,7 +257,7 @@ viewLanguages languages =
         entries =
             List.map viewLanguage languages
     in
-    div [] <|
+    div [ css [ mbElement ] ] <|
         [ h2l "Languages"
         ]
             ++ entries
@@ -261,19 +271,8 @@ viewLanguage language =
 
         fluency =
             Maybe.withDefault "" language.fluency
-
-        icon =
-            case String.toLower lang of
-                "english" ->
-                    "flag-usa"
-
-                "norwegian" ->
-                    "skiing-nordic"
-
-                _ ->
-                    ""
     in
-    Theme.language lang fluency (fontAwesomeIcon <| faSolid icon)
+    Theme.language lang fluency
 
 
 
@@ -334,16 +333,31 @@ viewReference reference =
 
 viewSkills : Resume.Skills -> Html Msg
 viewSkills skills =
-    div [] <| List.map viewSkill skills
+    let
+        entries =
+            List.map
+                viewSkill
+                skills
+    in
+    div [ css [ mbElement ] ] <|
+        [ h2l "Skills"
+        ]
+            ++ entries
 
 
 viewSkill : Resume.Skill -> Html Msg
 viewSkill skill =
-    div []
-        [ viewMaybe viewString skill.name
-        , viewMaybe viewString skill.level
-        , viewMaybe viewKeywords skill.keywords
-        ]
+    let
+        name =
+            Maybe.withDefault "" skill.name
+
+        level =
+            Maybe.withDefault "" skill.level
+
+        keywords =
+            Maybe.withDefault [] skill.keywords
+    in
+    Theme.skill name level keywords
 
 
 

@@ -71,20 +71,6 @@
     ],
     "volunteer": [
         {
-            "organization": "Student organization, Online",
-            "position": "SysAdmin/Developer",
-            "website": "https://online.ntnu.no",
-            "startDate": "2012-08",
-            "endDate": "2016-06",
-            "summary": "Various position and responsibilities",
-            "highlights": [
-                "Email administration",
-                "Economic management",
-                "Responsible for 15+ Linux and Windows servers",
-                "Planning US trip for 30+ students"
-            ]
-        },
-        {
             "organization": "dfekt LAN, PolarParty, Casual Gaming, The Gathering",
             "position": "Technical crew",
             "website": "http://gathering.org",
@@ -97,7 +83,22 @@
                 "PolarParty: Tech/Network, 3 years",
                 "The Gathering: Information Desk, 2 years"
             ]
+        },
+        {
+            "organization": "Student organization, Online",
+            "position": "SysAdmin/Developer",
+            "website": "https://online.ntnu.no",
+            "startDate": "2012-08",
+            "endDate": "2016-06",
+            "summary": "Various position and responsibilities",
+            "highlights": [
+                "Email administration",
+                "Economic management",
+                "Responsible for 15+ Linux and Windows servers",
+                "Planning US trip for 30+ students"
+            ]
         }
+
     ],
     "education": [
         {
@@ -121,15 +122,32 @@
     ],
     "skills": [
         {
-            "name": "Web Development",
-            "level": "Working knowledge",
+            "name": "Backend development",
+            "level": "Proficient",
             "keywords": [
+                "Go",
+                "Swift",
+                "Python"
+            ]
+        },
+        {
+            "name": "Frontend development",
+            "level": "Proficient",
+            "keywords": [
+                "Elm",
+                "React",
+                "JavaScript",
                 "HTML",
-                "CSS",
-                "Javascript",
-                "Django",
-                "Python",
-                "Flask"
+                "CSS"
+            ]
+        },
+        {
+            "name": "App development",
+            "level": "Played with",
+            "keywords": [
+                "Swift/iOS",
+                "Flutter/Android"
+
             ]
         }
     ],
@@ -145,7 +163,7 @@
     ],
     "interests": [
         {
-            "name": "Computer Parties/LAN",
+            "name": "LAN Parties",
             "keywords": [
                 "Networking",
                 "Social activity",
@@ -159,7 +177,12 @@
             ]
         },
         {
-            "name": "Skiing",
+            "name": "Photography",
+            "keywords": [
+            ]
+        },
+        {
+            "name": "Brewing",
             "keywords": [
             ]
         }
