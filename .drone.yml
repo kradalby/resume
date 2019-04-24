@@ -2,6 +2,11 @@ workspace:
   base: /go/src/github.com/kradalby/resume
 
 pipeline:
+  lint: 
+    image: node:10
+    commands: 
+        - yarn add elm-analyse
+        - npx elm-analyse
   build:
     image: plugins/docker
     repo: kradalby/resume
