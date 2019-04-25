@@ -1,192 +1,162 @@
 {
-    "basics": {
-        "name": "Kristoffer Dalby",
-        "label": "Software Engineer",
-        "picture": "",
-        "email": "kradalby@kradalby.no",
-        "phone": "+47 456 73 429",
-        "website": "https://kradalby.no",
-        "summary": "",
-        "location": {
-            "address": "",
-            "postalCode": "2312BZ",
-            "city": "Leiden",
-            "countryCode": "NL",
-            "region": "Zuid-Holland"
-        },
-        "profiles": [
-            {
-                "network": "GitHub",
-                "username": "kradalby",
-                "url": "github.com/kradalby"
-            },
-            {
-                "network": "linkedin",
-                "username": "kradalby",
-                "url": "linkedin.com/in/kradalby"
-            }
-        ]
+  "basics": {
+    "name": "Kristoffer Dalby",
+    "label": "Software Engineer",
+    "picture": "",
+    "email": "kradalby@kradalby.no",
+    "phone": "+47 456 73 429",
+    "website": "https://kradalby.no",
+    "summary": "",
+    "location": {
+      "address": "",
+      "postalCode": "2312BZ",
+      "city": "Leiden",
+      "countryCode": "NL",
+      "region": "Zuid-Holland"
     },
-    "work": [
-        {
-            "company": "European Space Agency",
-            "position": "Software Engineer - Trainee",
-            "website": "https://esa.int",
-            "startDate": "2017-09",
-            "endDate": "present",
-            "summary": "Fullstack developer working on internal platforms in ESA IT",
-            "highlights": [
-            ]
-        },
-        {
-            "company": "Knowit Objectnet",
-            "position": "Developer - Summer intern",
-            "website": "http://knowit.no",
-            "startDate": "2016-06",
-            "endDate": "2016-08",
-            "summary": "Fullstack developer creating SaaS applications in Scala and React.",
-            "highlights": [
-            ]
-        },
-        {
-            "company": "Uninett Sigma2",
-            "position": "Developer - Summer intern",
-            "website": "http://uninett.no",
-            "startDate": "2015-06",
-            "endDate": "2015-08",
-            "summary": "Research and development of a web based terminal application for usage and administration of high performance clusters.",
-            "highlights": [
-            ]
-        },
-        {
-            "company": "Norwegian University of Science and Technology",
-            "position": "Teaching assistant",
-            "website": "http://ntnu.edu",
-            "startDate": "2012-08",
-            "endDate": "2016-06",
-            "summary": "Various jobs throughout university, teaching and learning assistant, system administrator, IT support.",
-            "highlights": [
-            ]
-        }
-    ],
-    "volunteer": [
-        {
-            "organization": "dfekt LAN, PolarParty, Casual Gaming, The Gathering",
-            "position": "Technical crew",
-            "website": "http://gathering.org",
-            "startDate": "2011-01",
-            "endDate": "present",
-            "summary": "Worked with tech, network, economy and security. Parties ranged from 200 to 5000 participants.",
-            "highlights": [
-                "dfekt LAN: Leader and tech, 5 years",
-                "Casual gaming: Tech lead, 4 years",
-                "PolarParty: Tech/Network, 3 years",
-                "The Gathering: Information Desk, 2 years"
-            ]
-        },
-        {
-            "organization": "Student organization, Online",
-            "position": "SysAdmin/Developer",
-            "website": "https://online.ntnu.no",
-            "startDate": "2012-08",
-            "endDate": "2016-06",
-            "summary": "Various position and responsibilities",
-            "highlights": [
-                "Email administration",
-                "Economic management",
-                "Responsible for 15+ Linux and Windows servers",
-                "Planning US trip for 30+ students"
-            ]
-        }
-
-    ],
-    "education": [
-        {
-            "institution": "Norwegian University of Science and Technology",
-            "area": "Informatics",
-            "studyType": "Master",
-            "startDate": "2012-08",
-            "endDate": "2017-06",
-            "courses": [
-            ]
-        },
-        {
-            "institution": "Universidad Politécnica de Madrid",
-            "area": "Software Engineering",
-            "studyType": "Exchange",
-            "startDate": "2016-01",
-            "endDate": "2016-06",
-            "courses": [
-            ]
-        }
-    ],
-    "skills": [
-        {
-            "name": "Backend development",
-            "level": "Proficient",
-            "keywords": [
-                "Go",
-                "Swift",
-                "Python"
-            ]
-        },
-        {
-            "name": "Frontend development",
-            "level": "Proficient",
-            "keywords": [
-                "Elm",
-                "React",
-                "JavaScript",
-                "HTML",
-                "CSS"
-            ]
-        },
-        {
-            "name": "App development",
-            "level": "Played with",
-            "keywords": [
-                "Swift/iOS",
-                "Flutter/Android"
-
-            ]
-        }
-    ],
-    "languages": [
-        {
-            "language": "Norwegian",
-            "fluency": "Native"
-        },
-        {
-            "language": "English",
-            "fluency": "Fluent"
-        }
-    ],
-    "interests": [
-        {
-            "name": "LAN Parties",
-            "keywords": [
-                "Networking",
-                "Social activity",
-                "Community"
-            ]
-        },
-        {
-            "name": "Traveling",
-            "keywords": [
-                "Backpacking"
-            ]
-        },
-        {
-            "name": "Photography",
-            "keywords": [
-            ]
-        },
-        {
-            "name": "Brewing",
-            "keywords": [
-            ]
-        }
-    ],
-    "references": [
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "kradalby",
+        "url": "github.com/kradalby"
+      },
+      {
+        "network": "linkedin",
+        "username": "kradalby",
+        "url": "linkedin.com/in/kradalby"
+      }
     ]
+  },
+  "work": [
+    {
+      "company": "European Space Agency",
+      "position": "Software Engineer - Trainee",
+      "website": "https://esa.int",
+      "startDate": "2017-09",
+      "endDate": "present",
+      "summary": "Fullstack developer working on internal platforms in ESA IT",
+      "highlights": []
+    },
+    {
+      "company": "Knowit Objectnet",
+      "position": "Developer - Summer intern",
+      "website": "http://knowit.no",
+      "startDate": "2016-06",
+      "endDate": "2016-08",
+      "summary": "Fullstack developer creating SaaS applications in Scala and React.",
+      "highlights": []
+    },
+    {
+      "company": "Uninett Sigma2",
+      "position": "Developer - Summer intern",
+      "website": "http://uninett.no",
+      "startDate": "2015-06",
+      "endDate": "2015-08",
+      "summary": "Research and development of a web based terminal application for usage and administration of high performance clusters.",
+      "highlights": []
+    },
+    {
+      "company": "Norwegian University of Science and Technology",
+      "position": "Teaching assistant",
+      "website": "http://ntnu.edu",
+      "startDate": "2012-08",
+      "endDate": "2016-06",
+      "summary": "Various jobs throughout university, teaching and learning assistant, system administrator, IT support.",
+      "highlights": []
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "dfekt LAN, PolarParty, Casual Gaming, The Gathering",
+      "position": "Technical crew",
+      "website": "http://gathering.org",
+      "startDate": "2011-01",
+      "endDate": "present",
+      "summary": "Worked with tech, network, economy and security. Parties ranged from 200 to 5000 participants.",
+      "highlights": [
+        "dfekt LAN: Leader and tech, 5 years",
+        "Casual gaming: Tech lead, 4 years",
+        "PolarParty: Tech/Network, 3 years",
+        "The Gathering: Information Desk, 2 years"
+      ]
+    },
+    {
+      "organization": "Student organization, Online",
+      "position": "SysAdmin/Developer",
+      "website": "https://online.ntnu.no",
+      "startDate": "2012-08",
+      "endDate": "2016-06",
+      "summary": "Various position and responsibilities",
+      "highlights": [
+        "Email administration",
+        "Economic management",
+        "Responsible for 15+ Linux and Windows servers",
+        "Planning US trip for 30+ students"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Norwegian University of Science and Technology",
+      "area": "Informatics",
+      "studyType": "Master",
+      "startDate": "2012-08",
+      "endDate": "2017-06",
+      "courses": []
+    },
+    {
+      "institution": "Universidad Politécnica de Madrid",
+      "area": "Software Engineering",
+      "studyType": "Exchange",
+      "startDate": "2016-01",
+      "endDate": "2016-06",
+      "courses": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "Backend development",
+      "level": "Proficient",
+      "keywords": ["Go", "Swift", "Python"]
+    },
+    {
+      "name": "Frontend development",
+      "level": "Proficient",
+      "keywords": ["Elm", "React", "JavaScript", "HTML", "CSS"]
+    },
+    {
+      "name": "App development",
+      "level": "Played with",
+      "keywords": ["Swift/iOS", "Flutter/Android"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Norwegian",
+      "fluency": "Native"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ],
+  "interests": [
+    {
+      "name": "LAN Parties",
+      "keywords": ["Networking", "Social activity", "Community"]
+    },
+    {
+      "name": "Traveling",
+      "keywords": ["Backpacking"]
+    },
+    {
+      "name": "Photography",
+      "keywords": []
+    },
+    {
+      "name": "Brewing",
+      "keywords": []
+    }
+  ],
+  "references": []
 }
