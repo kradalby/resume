@@ -7,6 +7,7 @@ pipeline:
     commands: 
         - yarn
         - npx elm-analyse
+        - npx elm-format --validate src/
         - npx stylelint src/**.scss
   build:
     image: plugins/docker
