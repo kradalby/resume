@@ -2,9 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 // to extract the css as a separate file
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -132,19 +130,6 @@ if (MODE === "production") {
         // inject details of output file at end of body
         inject: "body"
       }),
-      // Delete everything from output directory and report to user
-      new CleanWebpackPlugin(["dist"], {
-        root: __dirname,
-        exclude: [],
-        verbose: true,
-        dry: false
-      }),
-      // Copy static assets
-      new CopyWebpackPlugin([
-        {
-          from: "src/assets"
-        }
-      ]),
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
         // both options are optional

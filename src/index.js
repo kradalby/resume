@@ -44,6 +44,7 @@ library.add(
 dom.watch();
 
 import resume from "./resume.json";
+import { setTimeout } from "timers";
 const { Elm } = require("./Main");
 
 // const storageKey = 'store'
@@ -52,3 +53,7 @@ let app = Elm.Main.init({
   flags: resume,
   node: document.getElementById("app")
 });
+
+// setTimeout(() => {
+//   document.body.dispatchEvent(new Event("view-ready"));
+// }, 5000);
