@@ -1,14 +1,12 @@
 module Main exposing (Model, Msg(..), init, main, update, view)
 
 import Browser
-import Css exposing (..)
-import Html
-import Html.Styled exposing (..)
-import Html.Styled.Attributes exposing (class, css, href, src)
-import Html.Styled.Events exposing (onClick)
+import Css exposing (backgroundColor, borderBox, boxSizing, display, float, height, inlineBlock, mm, padding, pct, right, width)
+import Html.Styled exposing (Html, div, span, text, toUnstyled)
+import Html.Styled.Attributes exposing (class, css)
 import Json.Decode as Decode
 import Resume
-import Theme exposing (..)
+import Theme exposing (bBoxBlock, edu, email, entry, github, globe, h, h1l, h2l, h2r, h3l, leftWidth, linkedin, mbElement, phone, rightWidth, telegram, theme, whatsapp)
 
 
 
@@ -28,7 +26,7 @@ init flag =
         Ok resume ->
             ( { resume = Just resume }, Cmd.none )
 
-        Err err ->
+        Err _ ->
             ( { resume = Nothing }, Cmd.none )
 
 
@@ -67,19 +65,6 @@ view model =
                     [ viewLeft resume
                     , viewRight resume
                     ]
-
-                -- [ article []
-                --     [
-                --     , viewMaybe viewAwards resume.awards
-                --     , viewMaybe viewEducations resume.education
-                --     , viewMaybe viewInterests resume.interests
-                --     , viewMaybe viewLanguages resume.languages
-                --     , viewMaybe viewPublications resume.publications
-                --     , viewMaybe viewReferences resume.references
-                --     , viewMaybe viewSkills resume.skills
-                --     , viewMaybe viewWork resume.work
-                --     ]
-                -- ]
                 ]
 
 
@@ -131,41 +116,15 @@ viewMaybe viewFunc data =
             viewFunc d
 
 
-viewKeywords : Resume.Keywords -> Html Msg
-viewKeywords courses =
-    div [] <| List.map viewString courses
 
-
-viewHighlights : Resume.Highlights -> Html Msg
-viewHighlights courses =
-    div [] <| List.map viewString courses
-
-
-
--- -----------------------------------------------
---  Awards
--- -----------------------------------------------
-
-
-viewAwards : Resume.Awards -> Html Msg
-viewAwards awards =
-    div [] <| List.map viewAward awards
-
-
-viewAward : Resume.Award -> Html Msg
-viewAward award =
-    div []
-        [ viewMaybe viewString award.awarder
-        , viewMaybe viewString award.date
-        , viewMaybe viewString award.summary
-        , viewMaybe viewString award.title
-        ]
-
-
-
--- -----------------------------------------------
--- END Awards
--- -----------------------------------------------
+-- viewKeywords : Resume.Keywords -> Html Msg
+-- viewKeywords courses =
+--     div [] <| List.map viewString courses
+--
+--
+-- viewHighlights : Resume.Highlights -> Html Msg
+-- viewHighlights courses =
+--     div [] <| List.map viewString courses
 -- -----------------------------------------------
 --  Educations
 -- -----------------------------------------------
@@ -207,12 +166,10 @@ viewEducation education =
     edu institution studyType area startDate endDate
 
 
-viewCourses : Resume.Courses -> Html Msg
-viewCourses courses =
-    div [] <| List.map viewString courses
 
-
-
+-- viewCourses : Resume.Courses -> Html Msg
+-- viewCourses courses =
+--     div [] <| List.map viewString courses
 -- -----------------------------------------------
 -- END Educations
 -- -----------------------------------------------
@@ -278,53 +235,6 @@ viewLanguage language =
 
 -- -----------------------------------------------
 -- END Languages
--- -----------------------------------------------
--- -----------------------------------------------
---  Publications
--- -----------------------------------------------
-
-
-viewPublications : Resume.Publications -> Html Msg
-viewPublications publications =
-    div [] <| List.map viewPublication publications
-
-
-viewPublication : Resume.Publication -> Html Msg
-viewPublication publication =
-    div []
-        [ viewMaybe viewString publication.name
-        , viewMaybe viewString publication.publisher
-        , viewMaybe viewString publication.releaseDate
-        , viewMaybe viewString publication.summary
-        , viewMaybe viewString publication.website
-        ]
-
-
-
--- -----------------------------------------------
--- END Publications
--- -----------------------------------------------
--- -----------------------------------------------
---  References
--- -----------------------------------------------
-
-
-viewReferences : Resume.References -> Html Msg
-viewReferences references =
-    div [] <| List.map viewReference references
-
-
-viewReference : Resume.Reference -> Html Msg
-viewReference reference =
-    div []
-        [ viewMaybe viewString reference.name
-        , viewMaybe viewString reference.reference
-        ]
-
-
-
--- -----------------------------------------------
--- END References
 -- -----------------------------------------------
 -- -----------------------------------------------
 --  Skills
@@ -457,15 +367,6 @@ viewJob job =
 
 
 
--- div []
---     [ viewMaybe viewString job.company
---     , viewMaybe viewString job.startDate
---     , viewMaybe viewString job.endDate
---     , viewMaybe viewString job.position
---     , viewMaybe viewString job.summary
---     , viewMaybe viewString job.website
---     , viewMaybe viewHighlights job.highlights
---     ]
 -- -----------------------------------------------
 -- END Work
 -- -----------------------------------------------
@@ -489,19 +390,6 @@ viewBasics basics =
         ]
 
 
-
--- [ viewMaybe viewString basics.email
--- , viewMaybe viewString basics.label
--- ,
--- , viewMaybe viewString basics.phone
--- , viewMaybe viewString basics.picture
--- , viewMaybe viewString basics.summary
--- , viewMaybe viewString basics.website
--- , viewMaybe viewLocation basics.location
--- , viewMaybe viewProfiles basics.profiles
--- ]
-
-
 viewName : String -> Html Msg
 viewName name =
     h1l name
@@ -523,11 +411,6 @@ viewContact basics =
         , viewMaybe telegram basics.phone
         , viewMaybe viewProfiles basics.profiles
         ]
-
-
-viewString : String -> Html Msg
-viewString str =
-    p [] [ text str ]
 
 
 viewLocation : Resume.Location -> Html Msg

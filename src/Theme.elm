@@ -1,10 +1,8 @@
 module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, interest, keywords, language, leftWidth, linkedin, mbElement, mbItem, phone, rightWidth, skill, spacing, telegram, theme, twitter, w, whatsapp)
 
-import Css exposing (..)
-import Html
-import Html.Styled exposing (..)
-import Html.Styled.Attributes exposing (class, css, href, src)
-import Html.Styled.Events exposing (onClick)
+import Css exposing (Color, FontWeight, Style, block, borderBottomStyle, borderBottomWidth, borderBox, borderColor, boxSizing, color, display, float, fontFamilies, fontSize, fontStyle, fontWeight, hex, inlineBlock, int, italic, left, lineHeight, marginBottom, marginRight, mm, none, pct, pt, right, solid, textDecoration, width)
+import Html.Styled exposing (Attribute, Html, a, div, h1, h2, h3, h5, i, p, span, text)
+import Html.Styled.Attributes exposing (class, css, href)
 import List.Extra exposing (splitAt)
 
 
@@ -411,5 +409,5 @@ skill name level ks =
 
 
 keywords : List String -> Html msg
-keywords ks =
+keywords _ =
     div [] []
