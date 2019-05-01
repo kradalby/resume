@@ -143,7 +143,7 @@ h1s title borderColor =
                 , bBoxBlock
                 ]
     in
-    hs h1 title style borderColor 20 (int 600)
+    hs h1 title style borderColor 19.8 (int 600)
 
 
 h2s : String -> Color -> Html msg
@@ -381,13 +381,13 @@ interest lang =
                     "skiing-nordic"
 
                 "traveling" ->
-                    "traveling"
+                    "suitcase"
 
                 "lan parties" ->
-                    "computer"
+                    "network-wired"
 
                 "photography" ->
-                    "photo"
+                    "camera"
 
                 _ ->
                     ""
@@ -395,7 +395,7 @@ interest lang =
         icon =
             fontAwesomeIcon <| faSolid iconName
     in
-    span [ css [ bBoxInline, spacing ] ]
+    span [ css [ bBoxBlock, spacing ] ]
         [ icon
         , h5s lang
         ]
