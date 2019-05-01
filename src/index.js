@@ -10,6 +10,10 @@ import {
   faPhone,
   faGlobe,
   faSkiingNordic,
+  faCamera,
+  faBeer,
+  faSuitcase,
+  faNetworkWired,
   faFlagUsa
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -25,6 +29,10 @@ library.add(
   faPhone,
   faGlobe,
   faSkiingNordic,
+  faCamera,
+  faBeer,
+  faSuitcase,
+  faNetworkWired,
   faFlagUsa,
   faGithub,
   faTwitter,
