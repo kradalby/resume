@@ -16,18 +16,17 @@ import Theme exposing (bBoxBlock, edu, email, entry, github, globe, h, h1l, h2l,
 
 
 type alias Model =
-    { resume : Maybe Resume.Resume
-    }
+    Maybe Resume.Resume
 
 
 init : Decode.Value -> ( Model, Cmd Msg )
 init flag =
     case Decode.decodeValue Resume.decoder flag of
         Ok resume ->
-            ( { resume = Just resume }, Cmd.none )
+            ( Just resume, Cmd.none )
 
         Err _ ->
-            ( { resume = Nothing }, Cmd.none )
+            ( Nothing, Cmd.none )
 
 
 
@@ -55,7 +54,7 @@ update message model =
 
 view : Model -> Html Msg
 view model =
-    case model.resume of
+    case model of
         Nothing ->
             text "Could not parse resume"
 
