@@ -2,7 +2,7 @@
 # https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 #
 #
-FROM node:8 as elm
+FROM node:10 as elm
 WORKDIR /app
 
 COPY package.json .
@@ -18,10 +18,10 @@ RUN yarn run prod
 RUN apt-get update && apt-get install -y \
         xvfb \
         x11-xkb-utils \
-        xfonts-100dpi \
-        xfonts-75dpi \
-        xfonts-scalable \
-        xfonts-cyrillic \
+        # xfonts-100dpi \
+        # xfonts-75dpi \
+        # xfonts-scalable \
+        # xfonts-cyrillic \
         x11-apps \
         clang \
         libdbus-1-dev \
@@ -36,18 +36,13 @@ RUN apt-get update && apt-get install -y \
         libxss1 \
         libnss3-dev \
         gcc-multilib \
-        g++-multilib
+        g++-multilib \
+        && yarn add electron-pdf@1.3.2
 
-
-RUN apt-get update && apt-get install -y strace
-
-ENV DISPLAY ":9.0"
 # needs full path
 # https://github.com/fraserxu/electron-pdf/issues/173#issuecomment-417807284
-RUN Xvfb :9 -screen 0 1280x2000x32 > /dev/null 2>&1 &
-# RUN xvfb-run -n 9 npx electron-pdf /app/dist/index.html /app/dist/resume.pdf
-# RUN strace xvfb-run -n 9 npx electron-pdf /app/dist/index.html /app/dist/resume.pdf
-# RUN strace xvfb-run npx electron-pdf /app/dist/index.html /app/dist/resume.pdf
+ENV DISPLAY ":9.0"
+RUN xvfb-run npx electron-pdf /app/dist/index.html /app/dist/resume.pdf
 
-# FROM nginx:alpine
-# COPY --from=elm /app/dist /usr/share/nginx/html
+FROM nginx:alpine
+COPY --from=elm /app/dist /usr/share/nginx/html
