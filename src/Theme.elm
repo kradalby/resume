@@ -278,7 +278,9 @@ h5s title =
 
 fontAwesomeIcon : String -> Html msg
 fontAwesomeIcon faIcon =
-    i [ class faIcon, css [ spacing, color theme.text ] ] []
+    span [ css [ width (mm 6.5), bBoxInline ] ]
+        [ i [ class faIcon, css [ spacing, color theme.text ] ] []
+        ]
 
 
 h5sWithFontAwesome : String -> String -> Html msg
