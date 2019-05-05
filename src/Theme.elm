@@ -407,7 +407,7 @@ skill : String -> String -> List String -> Html msg
 skill name level ks =
     div [ css [ bBoxInline ] ]
         [ h3l name
-        , span [ css [ bBoxBlock ] ] [ h5s level ]
+        , span [ css [ bBoxBlock, fontStyle italic ] ] [ h5s level ]
         , keywords ks
         ]
 
