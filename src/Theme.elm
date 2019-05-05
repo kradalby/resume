@@ -99,12 +99,14 @@ hs :
     -> Color
     -> Float
     -> FontWeight a
+    -> Int
     -> Html msg
-hs hNode title style borderCol size weight =
+hs hNode title style borderCol size weight underlineCount =
     let
-        underlineCount =
-            4
-
+        -- underlineCount =
+        --     -- try full line instead of just a few
+        --     -- 4
+        --     10000
         ( s, e ) =
             splitAt underlineCount (String.split "" title)
 
@@ -141,7 +143,7 @@ h1s title borderColor =
                 , bBoxBlock
                 ]
     in
-    hs h1 title style borderColor 19.8 (int 600)
+    hs h1 title style borderColor 19.8 (int 600) 100
 
 
 h2s : String -> Color -> Html msg
@@ -153,7 +155,7 @@ h2s title borderColor =
                 , bBoxBlock
                 ]
     in
-    hs h2 title style borderColor 16 (int 600)
+    hs h2 title style borderColor 16 (int 600) 100
 
 
 h3s : String -> Color -> Html msg
@@ -165,7 +167,7 @@ h3s title borderColor =
                 , bBoxInline
                 ]
     in
-    hs h3 title style borderColor 12 (int 500)
+    hs h3 title style borderColor 12 (int 500) 0
 
 
 h1r : String -> Html msg
