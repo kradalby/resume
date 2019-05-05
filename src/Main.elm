@@ -162,7 +162,8 @@ viewEducation education =
         endDate =
             Maybe.withDefault "" education.endDate
     in
-    edu institution studyType area startDate endDate
+    -- edu institution studyType area startDate endDate
+    entry (area ++ " - " ++ studyType) "" "" institution startDate endDate
 
 
 
