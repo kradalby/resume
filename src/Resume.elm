@@ -79,6 +79,7 @@ type alias Education =
     , institution : Maybe String
     , startDate : Maybe String
     , studyType : Maybe String
+    , summary : Maybe String
     }
 
 
@@ -259,6 +260,7 @@ educationDecoder =
         |> optional "institution" (nullable Decode.string) Nothing
         |> optional "startDate" (nullable Decode.string) Nothing
         |> optional "studyType" (nullable Decode.string) Nothing
+        |> optional "summary" (nullable Decode.string) Nothing
 
 
 awardDecoder : Decoder Award

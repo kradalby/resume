@@ -102,7 +102,8 @@
       "studyType": "Master",
       "startDate": "2012-08",
       "endDate": "2017-06",
-      "courses": []
+      "courses": [],
+      "summary": "5 year (master + bachelor) degree with focus on software development, algorithms, process. Courses included security, AI, distributed data, networking, UI, etc."
     },
     {
       "institution": "Universidad Politécnica de Madrid",
@@ -110,7 +111,8 @@
       "studyType": "Exchange",
       "startDate": "2016-01",
       "endDate": "2016-06",
-      "courses": []
+      "courses": [],
+      "summary": "Software engineering master with a strong focus on an international environment, courses included concurrent systems (Erlang) and agent based development"
     }
   ],
   "skills": [
