@@ -1,6 +1,48 @@
 module Theme exposing (bBoxBlock, bBoxInline, date, edu, email, entry, faBrand, faSolid, font, fontAwesomeIcon, github, globe, h, h1l, h1r, h1s, h2l, h2r, h2s, h3l, h3r, h3s, h5s, h5sWithFontAwesome, header, hs, interest, keywords, language, leftWidth, linkedin, mbElement, mbItem, phone, rightWidth, skill, spacing, telegram, theme, twitter, w, whatsapp)
 
-import Css exposing (Color, FontWeight, Style, block, borderBottomStyle, borderBottomWidth, borderBox, borderColor, boxSizing, color, display, float, fontFamilies, fontSize, fontStyle, fontWeight, hex, inlineBlock, int, italic, left, lineHeight, marginBottom, marginRight, mm, none, pct, pt, right, solid, textDecoration, width)
+import Css
+    exposing
+        ( Color
+        , FontWeight
+        , Style
+        , backgroundColor
+        , block
+        , borderBottomStyle
+        , borderBottomWidth
+        , borderBox
+        , borderColor
+        , borderRadius
+        , boxSizing
+        , center
+        , color
+        , display
+        , float
+        , fontFamilies
+        , fontSize
+        , fontStyle
+        , fontWeight
+        , hex
+        , inlineBlock
+        , int
+        , italic
+        , left
+        , lineHeight
+        , marginBottom
+        , marginRight
+        , mm
+        , none
+        , paddingBottom
+        , paddingLeft
+        , paddingRight
+        , paddingTop
+        , pct
+        , pt
+        , right
+        , solid
+        , textAlign
+        , textDecoration
+        , width
+        )
 import Html.Styled exposing (Attribute, Html, a, div, h1, h2, h3, h5, i, p, span, text)
 import Html.Styled.Attributes exposing (class, css, href)
 import List.Extra exposing (splitAt)
@@ -53,11 +95,19 @@ spacing =
 -- https://www.colourlovers.com/palette/1720852/Resume_Pallete_9
 
 
-theme : { secondary : Color, primary : Color, text : Color }
+theme :
+    { secondary : Color
+    , primary : Color
+    , text : Color
+    , primaryDarken10 : Color
+    , primaryDarken20 : Color
+    }
 theme =
     { primary = hex "D5EBED"
     , secondary = hex "FFFFFF"
     , text = hex "404040"
+    , primaryDarken10 = hex "BCD2D4"
+    , primaryDarken20 = hex "A2B8BA"
     }
 
 
@@ -407,11 +457,41 @@ skill : String -> String -> List String -> Html msg
 skill name level ks =
     div [ css [ bBoxInline ] ]
         [ h3l name
-        , span [ css [ bBoxBlock, fontStyle italic ] ] [ h5s level ]
+        , h5
+            [ css
+                [ bBoxInline
+                , width (pct 100)
+                , float right
+                , fontStyle italic
+                , font 11 (int 400)
+                , marginBottom (mm 2)
+                ]
+            ]
+            [ text level ]
         , keywords ks
         ]
 
 
 keywords : List String -> Html msg
-keywords _ =
-    div [] []
+keywords kwords =
+    div [ css [ bBoxBlock, marginBottom (mm 3) ] ] <| List.map keyword kwords
+
+
+keyword : String -> Html msg
+keyword word =
+    span
+        [ css
+            [ backgroundColor theme.primaryDarken10
+            , paddingTop (mm 0.5)
+            , paddingBottom (mm 0.8)
+            , paddingLeft (mm 3)
+            , paddingRight (mm 3)
+            , borderRadius (mm 3)
+            , textAlign center
+            , marginRight (mm 1)
+            , marginBottom (mm 1)
+            , font 8 (int 400)
+            , bBoxInline
+            ]
+        ]
+        [ text word ]
