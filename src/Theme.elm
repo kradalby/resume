@@ -78,12 +78,12 @@ rightWidth =
 
 mbItem : Style
 mbItem =
-    marginBottom (mm 6)
+    marginBottom (mm 5.5)
 
 
 mbElement : Style
 mbElement =
-    marginBottom (mm 10)
+    marginBottom (mm 7)
 
 
 spacing : Style
