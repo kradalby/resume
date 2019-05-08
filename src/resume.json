@@ -125,6 +125,11 @@
       "keywords": ["Elm", "React", "JavaScript", "HTML", "CSS"]
     },
     {
+      "name": "DevOps",
+      "level": "Operations",
+      "keywords": ["Linux", "Ansible","Terraform","Kubernetes",  "Drone/Gitlab CI"]
+    },
+    {
       "name": "App development",
       "level": "Played with",
       "keywords": ["Swift/iOS", "Flutter/Android"]
