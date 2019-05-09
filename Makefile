@@ -23,3 +23,4 @@ reinstall:
 lint:
 	npx elm-analyse
 	npx elm-format --validate src/
+	npx stylelint src/**.scss

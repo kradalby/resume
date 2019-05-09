@@ -5,10 +5,8 @@ pipeline:
   lint: 
     image: node:10
     commands: 
-        - yarn
-        - npx elm-analyse
-        - npx elm-format --validate src/
-        - npx stylelint src/**.scss
+        - make install
+        - make lint
   build:
     image: plugins/docker
     repo: kradalby/resume

@@ -5,14 +5,11 @@
 FROM node:10 as elm
 WORKDIR /app
 
-COPY package.json .
-RUN yarn install --silent
+COPY Makefile package.json .
+RUN make install
 
-COPY elm.json .
-
-ENV NODE_ENV "production"
 COPY . .
-RUN yarn run prod
+RUN make build 
 
 
 RUN apt-get update && apt-get install -y \
