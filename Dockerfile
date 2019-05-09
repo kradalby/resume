@@ -5,7 +5,7 @@
 FROM node:10 as elm
 WORKDIR /app
 
-COPY Makefile package.json .
+COPY Makefile package.json ./
 RUN make install
 
 COPY . .
