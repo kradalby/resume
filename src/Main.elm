@@ -6,7 +6,7 @@ import Html.Styled exposing (Html, div, span, text, toUnstyled)
 import Html.Styled.Attributes exposing (class, css)
 import Json.Decode as Decode
 import Resume
-import Theme exposing (bBoxBlock, email, entry, github, globe, h, h1l, h2l, h2r, h3l, leftWidth, linkedin, mbElement, phone, rightWidth, telegram, theme, whatsapp)
+import Theme exposing (bBoxBlock, email, entry, github, globe, h, h1l, h2l, h2r, h3l, leftWidth, linkedin, mbElement, phone, rightWidth, theme, whatsapp)
 
 
 
@@ -411,7 +411,8 @@ viewContact basics =
         , viewMaybe email basics.email
         , viewMaybe phone basics.phone
         , viewMaybe whatsapp basics.phone
-        , viewMaybe telegram basics.phone
+
+        -- , viewMaybe telegram basics.phone
         , viewMaybe viewProfiles basics.profiles
         ]
 
