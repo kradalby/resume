@@ -103,7 +103,7 @@
       "startDate": "2012-08",
       "endDate": "2017-06",
       "courses": [],
-      "summary": "5 year (master + bachelor) degree with focus on software development, algorithms, process. Courses included security, AI, distributed data, networking, UI, etc."
+      "summary": "5 year (master + bachelor) degree with focus on software development, algorithms, process. Courses included security, AI, distributed data, networking and UX."
     },
     {
       "institution": "Universidad Politécnica de Madrid",
@@ -129,7 +129,13 @@
     {
       "name": "DevOps",
       "level": "Operations",
-      "keywords": ["Linux", "Ansible","Terraform","Kubernetes",  "Drone/Gitlab CI"]
+      "keywords": [
+        "Linux",
+        "Ansible",
+        "Terraform",
+        "Kubernetes",
+        "Drone/Gitlab CI"
+      ]
     },
     {
       "name": "App development",
