@@ -487,7 +487,7 @@ keyword : String -> Html msg
 keyword word =
     span
         [ css
-            [ backgroundColor theme.primaryDarken5
+            [ backgroundColor theme.primaryDarken10
             , paddingTop (mm 0.5)
             , paddingBottom (mm 0.8)
             , paddingLeft (mm 3)
