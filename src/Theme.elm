@@ -99,6 +99,7 @@ theme :
     { secondary : Color
     , primary : Color
     , text : Color
+    , primaryDarken5 : Color
     , primaryDarken10 : Color
     , primaryDarken20 : Color
     }
@@ -106,6 +107,7 @@ theme =
     { primary = hex "D5EBED"
     , secondary = hex "FFFFFF"
     , text = hex "404040"
+    , primaryDarken5 = hex "C8DEE0"
     , primaryDarken10 = hex "BCD2D4"
     , primaryDarken20 = hex "A2B8BA"
     }
@@ -481,7 +483,7 @@ keyword : String -> Html msg
 keyword word =
     span
         [ css
-            [ backgroundColor theme.primaryDarken10
+            [ backgroundColor theme.primaryDarken5
             , paddingTop (mm 0.5)
             , paddingBottom (mm 0.8)
             , paddingLeft (mm 3)
