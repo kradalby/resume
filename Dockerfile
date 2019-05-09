@@ -9,6 +9,7 @@ COPY Makefile package.json ./
 RUN make install
 
 COPY . .
+ENV NODE_ENV production
 RUN make build 
 
 
