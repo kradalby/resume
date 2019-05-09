@@ -99,6 +99,8 @@ theme :
     { secondary : Color
     , primary : Color
     , text : Color
+    , primaryLighten5 : Color
+    , primaryLighten10 : Color
     , primaryDarken5 : Color
     , primaryDarken10 : Color
     , primaryDarken20 : Color
@@ -107,6 +109,8 @@ theme =
     { primary = hex "D5EBED"
     , secondary = hex "FFFFFF"
     , text = hex "404040"
+    , primaryLighten5 = hex "E2F8FA"
+    , primaryLighten10 = hex "EFFFFF"
     , primaryDarken5 = hex "C8DEE0"
     , primaryDarken10 = hex "BCD2D4"
     , primaryDarken20 = hex "A2B8BA"
