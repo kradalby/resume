@@ -91,10 +91,6 @@ spacing =
     marginRight (mm 1.1)
 
 
-
--- https://www.colourlovers.com/palette/1720852/Resume_Pallete_9
-
-
 theme :
     { secondary : Color
     , primary : Color
@@ -106,6 +102,7 @@ theme :
     , primaryDarken20 : Color
     }
 theme =
+    -- https://www.colourlovers.com/palette/1720852/Resume_Pallete_9
     { primary = hex "D5EBED"
     , secondary = hex "FFFFFF"
     , text = hex "404040"
@@ -279,7 +276,7 @@ entry title desc url company from to =
     let
         companyStyle =
             Css.batch
-                [ font 11 (int 400)
+                [ font 10 (int 400)
                 , bBoxBlock
 
                 -- , float left
@@ -469,7 +466,7 @@ skill name level ks =
                 , width (pct 100)
                 , float right
                 , fontStyle italic
-                , font 11 (int 400)
+                , font 10 (int 400)
                 , marginBottom (mm 2)
                 ]
             ]
