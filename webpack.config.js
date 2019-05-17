@@ -7,8 +7,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 // to extract the css as a separate file
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-var MODE =
-  process.env.npm_lifecycle_event === "prod" ? "production" : "development";
+const MODE = process.env.NODE_ENV || "development";
 var filename = MODE === "production" ? "[name]-[hash].js" : "index.js";
 
 var common = {
