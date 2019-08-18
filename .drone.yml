@@ -1,37 +1,63 @@
-workspace:
-  base: /go/src/github.com/kradalby/resume
+---
+kind: pipeline
+name: default
 
-pipeline:
-  lint: 
-    image: node:10
-    commands: 
-        - make install
-        - make lint
-  build:
-    image: plugins/docker
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: lint
+  pull: if-not-exists
+  image: node:10
+  commands:
+  - make install
+  - make lint
+
+- name: build
+  pull: if-not-exists
+  image: banzaicloud/drone-kaniko
+  settings:
     repo: kradalby/resume
-    # auto_tag: true
-    secrets: [ docker_username, docker_password ]
     tags:
-        - ${DRONE_COMMIT_SHA:0:8}
-        - latest
+    - ${DRONE_COMMIT_SHA:0:8}
+    - latest
+    cache: true
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
 
-  deploy:
-     image: quay.io/honestbee/drone-kubernetes
-     deployment: resume-deployment
-     repo: kradalby/resume
-     container: resume-container
-     namespace: resume
-     secrets: [ kubernetes_server, kubernetes_cert, kubernetes_token ]
-     tag:
-       - ${DRONE_COMMIT_SHA:0:8}
+- name: deploy
+  pull: if-not-exists
+  image: quay.io/honestbee/drone-kubernetes
+  settings:
+    container: resume-container
+    deployment: resume-deployment
+    namespace: resume
+    repo: kradalby/resume
+    tag:
+    - ${DRONE_COMMIT_SHA:0:8}
+  environment:
+    KUBERNETES_CERT:
+      from_secret: kubernetes_cert
+    KUBERNETES_SERVER:
+      from_secret: kubernetes_server
+    KUBERNETES_TOKEN:
+      from_secret: kubernetes_token
 
-  notify:
-    image: drillster/drone-email
-    host: smtp.fap.no
-    skip_verify: true
-    port: 25
+- name: notify
+  pull: if-not-exists
+  image: drillster/drone-email
+  settings:
     from: drone@drone.fap.no
-    recipients: [ kradalby@kradalby.no ]
-    when:
-      status: [ success, changed, failure ]
+    host: smtp.fap.no
+    port: 25
+    recipients:
+    - kradalby@kradalby.no
+    skip_verify: true
+  when:
+    status:
+    - success
+    - changed
+    - failure
