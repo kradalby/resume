@@ -32,8 +32,8 @@ steps:
   pull: if-not-exists
   image: quay.io/honestbee/drone-kubernetes
   settings:
-    container: resume-container
-    deployment: resume-deployment
+    container: common
+    deployment: resume
     namespace: resume
     repo: kradalby/resume
     tag:
