@@ -4,10 +4,10 @@ install:
 	yarn
 
 build:
-	env NODE_ENV=production npx webpack -p
+	npx parcel build --experimental-scope-hoisting src/index.html
 
 dev:
-	npx webpack-dev-server --hot --colors --port 3600
+	npx parcel watch src/index.html
 
 upgrade:
 	yarn upgrade --latest
