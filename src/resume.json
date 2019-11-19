@@ -29,11 +29,20 @@
   },
   "work": [
     {
+      "company": "G-Research",
+      "position": "Site Reliability",
+      "website": "https://www.gresearch.co.uk",
+      "startDate": "2019-09",
+      "endDate": "present",
+      "summary": "",
+      "highlights": []
+    },
+    {
       "company": "European Space Agency",
       "position": "Software Engineer - Trainee",
       "website": "https://www.esa.int",
       "startDate": "2017-09",
-      "endDate": "present",
+      "endDate": "2019-08",
       "summary": "Fullstack developer working on internal platforms in ESA IT",
       "highlights": []
     },
