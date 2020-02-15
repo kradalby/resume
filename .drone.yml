@@ -7,12 +7,12 @@ platform:
   arch: amd64
 
 steps:
-  # - name: lint
-  #   pull: if-not-exists
-  #   image: node:10
-  #   commands:
-  #   - make install
-  #   - make lint
+- name: lint
+  pull: if-not-exists
+  image: node:10
+  commands:
+  - make install
+  - make lint
 
 - name: build
   pull: if-not-exists
