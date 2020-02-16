@@ -7,63 +7,67 @@ platform:
   arch: amd64
 
 steps:
-- name: lint
-  pull: if-not-exists
-  image: node:10
-  commands:
-  - make install
-  - make lint
+  - name: lint
+    pull: if-not-exists
+    image: node:10
+    commands:
+      - make install
+      - make lint
 
-- name: build
-  pull: if-not-exists
-  image: banzaicloud/drone-kaniko
-  settings:
-    repo: kradalby/resume
-    tags:
-    - ${DRONE_COMMIT_SHA:0:8}
-    - latest
-    cache: true
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-  when:
-    branch:
-    - master
+  - name: build
+    pull: if-not-exists
+    image: banzaicloud/drone-kaniko
 
-- name: deploy
-  pull: if-not-exists
-  image: quay.io/honestbee/drone-kubernetes
-  settings:
-    container: common
-    deployment: resume
-    namespace: resume
-    repo: kradalby/resume
-    tag:
-    - ${DRONE_COMMIT_SHA:0:8}
-  environment:
-    KUBERNETES_CERT:
-      from_secret: kubernetes_cert
-    KUBERNETES_SERVER:
-      from_secret: kubernetes_server
-    KUBERNETES_TOKEN:
-      from_secret: kubernetes_token
-  when:
-    branch:
-    - master
+  - name: publish
+    pull: if-not-exists
+    image: banzaicloud/drone-kaniko
+    settings:
+      repo: kradalby/resume
+      tags:
+        - ${DRONE_COMMIT_SHA:0:8}
+        - latest
+      cache: true
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    when:
+      branch:
+        - master
 
-- name: notify
-  pull: if-not-exists
-  image: drillster/drone-email
-  settings:
-    from: drone@drone.fap.no
-    host: smtp.fap.no
-    port: 25
-    recipients:
-    - kradalby@kradalby.no
-    skip_verify: true
-  when:
-    status:
-    - success
-    - changed
-    - failure
+  - name: deploy
+    pull: if-not-exists
+    image: quay.io/honestbee/drone-kubernetes
+    settings:
+      container: common
+      deployment: resume
+      namespace: resume
+      repo: kradalby/resume
+      tag:
+        - ${DRONE_COMMIT_SHA:0:8}
+    environment:
+      KUBERNETES_CERT:
+        from_secret: kubernetes_cert
+      KUBERNETES_SERVER:
+        from_secret: kubernetes_server
+      KUBERNETES_TOKEN:
+        from_secret: kubernetes_token
+    when:
+      branch:
+        - master
+
+  - name: notify
+    pull: if-not-exists
+    image: drillster/drone-email
+    settings:
+      from: drone@drone.fap.no
+      host: smtp.fap.no
+      port: 25
+      recipients:
+        - kradalby@kradalby.no
+      skip_verify: true
+    when:
+      status:
+        - success
+        - changed
+        - failure
