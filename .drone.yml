@@ -34,17 +34,12 @@ steps:
     when:
       branch:
         - master
+      event:
+        - push
 
   - name: deploy
     pull: if-not-exists
-    image: quay.io/honestbee/drone-kubernetes
-    settings:
-      container: common
-      deployment: resume
-      namespace: resume
-      repo: kradalby/resume
-      tag:
-        - ${DRONE_COMMIT_SHA:0:8}
+    image: kradalby/drone-kubectl
     environment:
       KUBERNETES_CERT:
         from_secret: kubernetes_cert
@@ -52,9 +47,14 @@ steps:
         from_secret: kubernetes_server
       KUBERNETES_TOKEN:
         from_secret: kubernetes_token
+    commands:
+      - kubectl -n resume set image deployment/resume resume=kradalby/resume:${DRONE_COMMIT_SHA:0:8} --record
+      - kubectl -n resume rollout status deployment resume
     when:
       branch:
         - master
+      event:
+        - push
 
   - name: notify
     pull: if-not-exists
