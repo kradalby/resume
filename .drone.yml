@@ -48,7 +48,7 @@ steps:
       KUBERNETES_TOKEN:
         from_secret: kubernetes_token
     commands:
-      - kubectl -n resume set image deployment/resume resume=kradalby/resume:${DRONE_COMMIT_SHA:0:8} --record
+      - kubectl -n resume set image deployment/resume common=kradalby/resume:${DRONE_COMMIT_SHA:0:8} --record
       - kubectl -n resume rollout status deployment resume
     when:
       branch:
