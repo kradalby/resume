@@ -31,7 +31,7 @@
     "parcel-bundler": "*",
     "prettier": "1.19.1",
     "reset-css": "5.0.1",
-    "sass": "1.26.2",
+    "sass": "1.26.3",
     "stylelint": "13.2.1",
     "stylelint-config-prettier": "8.0.1",
     "terser": "4.6.6",
