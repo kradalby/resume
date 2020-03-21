@@ -15,12 +15,16 @@ steps:
       - make lint
 
   - name: build
-    pull: if-not-exists
-    image: banzaicloud/drone-kaniko
+    pull: always
+    image: plugins/docker
+    environment:
+      DOCKER_BUILDKIT: 1
 
   - name: publish
-    pull: if-not-exists
-    image: banzaicloud/drone-kaniko
+    pull: always
+    image: plugins/docker
+    environment:
+      DOCKER_BUILDKIT: 1
     settings:
       repo: kradalby/resume
       tags:
