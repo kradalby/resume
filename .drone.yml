@@ -19,6 +19,9 @@ steps:
     image: plugins/docker
     environment:
       DOCKER_BUILDKIT: 1
+    settings:
+      repo: dryrun
+      dry_run: true
 
   - name: publish
     pull: always
