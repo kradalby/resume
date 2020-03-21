@@ -11,8 +11,8 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@babel/core": "7.8.6",
-    "@babel/preset-env": "7.8.6",
+    "@babel/core": "7.9.0",
+    "@babel/preset-env": "7.9.0",
     "@fortawesome/fontawesome-free": "5.12.1",
     "@fortawesome/fontawesome-svg-core": "1.2.27",
     "@fortawesome/free-brands-svg-icons": "5.12.1",
@@ -31,10 +31,10 @@
     "parcel-bundler": "*",
     "prettier": "1.19.1",
     "reset-css": "5.0.1",
-    "sass": "1.26.2",
-    "stylelint": "13.2.0",
+    "sass": "1.26.3",
+    "stylelint": "13.2.1",
     "stylelint-config-prettier": "8.0.1",
-    "terser": "4.6.6",
+    "terser": "4.6.7",
     "typeface-open-sans": "0.0.75"
   }
 }
