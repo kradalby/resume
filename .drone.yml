@@ -17,6 +17,10 @@ steps:
   - name: build
     pull: always
     image: banzaicloud/drone-kaniko:0.5.1
+    when:
+      branch:
+        exclude:
+        - master
 
   - name: publish
     pull: always
