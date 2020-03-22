@@ -16,18 +16,11 @@ steps:
 
   - name: build
     pull: always
-    image: plugins/docker
-    environment:
-      DOCKER_BUILDKIT: 1
-    settings:
-      repo: dryrun
-      dry_run: true
+    image: banzaicloud/drone-kaniko:0.5.1
 
   - name: publish
     pull: always
-    image: plugins/docker
-    environment:
-      DOCKER_BUILDKIT: 1
+    image: banzaicloud/drone-kaniko:0.5.1
     settings:
       repo: kradalby/resume
       tags:
