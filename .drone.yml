@@ -16,7 +16,7 @@ steps:
 
   - name: build
     pull: always
-    image: banzaicloud/drone-kaniko:0.5.1
+    image: banzaicloud/drone-kaniko:0.6.1
     when:
       branch:
         exclude:
@@ -24,7 +24,7 @@ steps:
 
   - name: publish
     pull: always
-    image: banzaicloud/drone-kaniko:0.5.1
+    image: banzaicloud/drone-kaniko:0.6.1
     settings:
       repo: kradalby/resume
       tags:
