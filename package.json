@@ -29,7 +29,7 @@
     "node-sass": "4.13.1",
     "paper-css": "0.4.1",
     "parcel-bundler": "*",
-    "prettier": "1.19.1",
+    "prettier": "2.0.1",
     "reset-css": "5.0.1",
     "sass": "1.26.3",
     "stylelint": "13.2.1",
