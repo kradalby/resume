@@ -29,7 +29,7 @@
       },
       {
          "image": "banzaicloud/drone-kaniko:0.5.1",
-         "name": "Publish container image",
+         "name": "Publish image kradalby/resume",
          "pull": "always",
          "settings": {
             "password": {
@@ -55,7 +55,7 @@
       },
       {
          "commands": [
-            "kubectl -n $APP set image deployment/$APP $APP=kradalby/$APP:${DRONE_COMMIT_SHA:0:8} --record",
+            "kubectl -n $APP set image deployment/$APP $APP=$REPO:${DRONE_COMMIT_SHA:0:8} --record",
             "kubectl -n $APP rollout status deployment $APP"
          ],
          "environment": {
@@ -68,10 +68,11 @@
             },
             "KUBERNETES_token": {
                "from_secret": "kubernetes_token"
-            }
+            },
+            "REPO": "kradalby/resume"
          },
          "image": "kradalby/drone-kubectl",
-         "name": "Deploy to Kubernetes",
+         "name": "Deploy resume to Kubernetes",
          "pull": "always",
          "trigger": {
             "branch": [
@@ -95,11 +96,10 @@
                "from_secret": "discord_webhook_token"
             }
          },
-         "trigger": {
+         "when": {
             "status": [
                "success",
-               "changed",
-               "failed"
+               "failure"
             ]
          }
       }
