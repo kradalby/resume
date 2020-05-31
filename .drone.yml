@@ -35,7 +35,7 @@
             "password": {
                "from_secret": "docker_password"
             },
-            "repo": "resume",
+            "repo": "kradalby/resume",
             "tags": [
                "latest",
                "${DRONE_COMMIT_SHA:0:8}"
@@ -44,6 +44,35 @@
                "from_secret": "docker_username"
             }
          },
+         "trigger": {
+            "branch": [
+               "master"
+            ],
+            "event": [
+               "push"
+            ]
+         }
+      },
+      {
+         "commands": [
+            "kubectl -n $APP set image deployment/$APP $APP=kradalby/$APP:${DRONE_COMMIT_SHA:0:8} --record",
+            "kubectl -n $APP rollout status deployment $APP"
+         ],
+         "environment": {
+            "APP": "resume",
+            "KUBERNETES_CERT": {
+               "from_secret": "kubernetes_cert"
+            },
+            "KUBERNETES_SERVER": {
+               "from_secret": "kubernetes_server"
+            },
+            "KUBERNETES_token": {
+               "from_secret": "kubernetes_token"
+            }
+         },
+         "image": "kradalby/drone-kubectl",
+         "name": "Deploy to Kubernetes",
+         "pull": "always",
          "trigger": {
             "branch": [
                "master"
