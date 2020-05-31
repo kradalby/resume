@@ -20,7 +20,7 @@ steps:
     when:
       branch:
         exclude:
-        - master
+          - master
 
   - name: publish
     pull: always
@@ -60,6 +60,14 @@ steps:
       event:
         - push
 
+  - name: discord notification
+    image: appleboy/drone-discord
+    settings:
+      webhook_id:
+        from_secret: discord_webhook_id
+      webhook_token:
+        from_secret: discord_webhook_token
+
 ---
 kind: secret
 name: docker_username
@@ -73,3 +81,17 @@ name: docker_password
 get:
   path: docker
   name: password
+
+---
+kind: secret
+name: discord_webhook_id
+get:
+  path: discord-build
+  name: id
+
+---
+kind: secret
+name: discord_webhook_token
+get:
+  path: discord-build
+  name: token
