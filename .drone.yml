@@ -44,7 +44,7 @@
                "from_secret": "docker_username"
             }
          },
-         "trigger": {
+         "when": {
             "branch": [
                "master"
             ],
@@ -74,7 +74,7 @@
          "image": "kradalby/drone-kubectl",
          "name": "Deploy resume to Kubernetes",
          "pull": "always",
-         "trigger": {
+         "when": {
             "branch": [
                "master"
             ],
