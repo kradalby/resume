@@ -66,7 +66,7 @@
             "KUBERNETES_SERVER": {
                "from_secret": "kubernetes_server"
             },
-            "KUBERNETES_token": {
+            "KUBERNETES_TOKEN": {
                "from_secret": "kubernetes_token"
             },
             "REPO": "kradalby/resume"
