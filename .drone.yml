@@ -19,6 +19,11 @@
          "image": "banzaicloud/drone-kaniko:0.5.1",
          "name": "Build container image",
          "pull": "always",
+         "trigger": {
+            "event": [
+               "pull_request"
+            ]
+         },
          "when": {
             "branch": {
                "exclude": [
