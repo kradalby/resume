@@ -89,7 +89,7 @@
          }
       },
       {
-         "image": "appleboy/drone-discord",
+         "image": "appleboy/drone-discord:1.2.5",
          "name": "Notify Discord",
          "pull": "always",
          "settings": {
