@@ -8,11 +8,21 @@
    "steps": [
       {
          "commands": [
-            "make install",
-            "make lint"
+            "npm install prettier",
+            "npx prettier --check \"**/*.{ts,js,md,yaml,yml,sass,css,scss}\""
          ],
-         "image": "node:10",
-         "name": "Node lint",
+         "image": "node:lts",
+         "name": "prettier lint",
+         "pull": "always"
+      },
+      {
+         "commands": [
+            "npm install elm-analyse elm-format",
+            "npx elm-analyse",
+            "npx elm-format --validate src/"
+         ],
+         "image": "node:lts",
+         "name": "Elm lint",
          "pull": "always"
       },
       {
