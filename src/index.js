@@ -14,14 +14,14 @@ import {
   faBeer,
   faSuitcase,
   faNetworkWired,
-  faFlagUsa
+  faFlagUsa,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faTwitter,
   faWhatsapp,
   faTelegram,
-  faLinkedin
+  faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
@@ -51,7 +51,7 @@ const { Elm } = require("./Main");
 // const flags = localStorage.getItem(storageKey)
 let app = Elm.Main.init({
   flags: resume,
-  node: document.getElementById("app")
+  node: document.getElementById("app"),
 });
 
 // setTimeout(() => {
