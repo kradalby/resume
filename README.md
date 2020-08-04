@@ -9,6 +9,7 @@ This is my current resume and it is made with Elm and [Elm CSS](https://github.c
 This project is a result of trying to learn Elm CSS and revamping my resume :resume:
 
 ## Building
+
 Build locally:
 
     make install
@@ -19,11 +20,11 @@ Build Docker container:
     docker build -t <TAG> .
 
 ## Development
+
 Run dev server
 
     make install
     make dev
-
 
 ## Lint
 
