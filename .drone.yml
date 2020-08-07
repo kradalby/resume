@@ -7,6 +7,16 @@
    },
    "steps": [
       {
+         "commands": [ ],
+         "environment": {
+            "DEFAULT_WORKSPACE": "/drone/src",
+            "RUN_LOCAL": "true"
+         },
+         "image": "github/super-linter:latest",
+         "name": "Super lint",
+         "pull": "always"
+      },
+      {
          "commands": [
             "npm install prettier",
             "npx prettier --check \"**/*.{ts,js,md,yaml,yml,sass,css,scss}\""
