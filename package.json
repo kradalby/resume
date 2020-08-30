@@ -11,7 +11,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@babel/core": "7.11.1",
+    "@babel/core": "7.11.4",
     "@babel/preset-env": "7.11.0",
     "@fortawesome/fontawesome-free": "5.14.0",
     "@fortawesome/fontawesome-svg-core": "1.2.30",
@@ -23,18 +23,18 @@
     "elm-format": "0.8.3",
     "elm-test": "0.19.1",
     "elm-verify-examples": "5.0.0",
-    "eslint": "7.6.0",
+    "eslint": "7.7.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
     "node-sass": "4.14.1",
     "paper-css": "0.4.1",
     "parcel-bundler": "*",
-    "prettier": "2.0.5",
+    "prettier": "2.1.1",
     "reset-css": "5.0.1",
     "sass": "1.26.10",
     "stylelint": "13.6.1",
     "stylelint-config-prettier": "8.0.2",
-    "terser": "5.0.0",
+    "terser": "5.2.1",
     "typeface-open-sans": "0.0.75"
   }
 }
