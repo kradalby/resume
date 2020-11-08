@@ -11,6 +11,10 @@
    "node_selector": {
       "drone": true
    },
+   "platform": {
+      "arch": "amd64",
+      "os": "linux"
+   },
    "steps": [
       {
          "commands": [
@@ -106,36 +110,6 @@
                "from_secret": "gh_username"
             }
          },
-         "when": {
-            "branch": [
-               "master"
-            ],
-            "event": [
-               "push"
-            ]
-         }
-      },
-      {
-         "commands": [
-            "kubectl -n $APP set image deployment/$APP $APP=$REPO:${DRONE_COMMIT_SHA:0:8} --record",
-            "kubectl -n $APP rollout status deployment $APP"
-         ],
-         "environment": {
-            "APP": "resume",
-            "KUBERNETES_CERT": {
-               "from_secret": "kubernetes_cert"
-            },
-            "KUBERNETES_SERVER": {
-               "from_secret": "kubernetes_server"
-            },
-            "KUBERNETES_TOKEN": {
-               "from_secret": "kubernetes_token"
-            },
-            "REPO": "kradalby/resume"
-         },
-         "image": "kradalby/drone-kubectl",
-         "name": "Deploy resume to Kubernetes",
-         "pull": "always",
          "when": {
             "branch": [
                "master"
