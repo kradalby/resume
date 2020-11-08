@@ -17,7 +17,7 @@
             "npm install prettier",
             "npx prettier --check \"**/*.{ts,js,md,yaml,yml,sass,css,scss}\""
          ],
-         "image": "node:lts",
+         "image": "node:lts-buster",
          "name": "Prettier lint",
          "pull": "always"
       },
@@ -27,7 +27,7 @@
             "npx elm-analyse",
             "npx elm-format --validate src/"
          ],
-         "image": "node:lts",
+         "image": "node:lts-buster",
          "name": "Elm lint",
          "pull": "always"
       },
