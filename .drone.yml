@@ -1,5 +1,11 @@
 ---
 {
+   "dns_config": {
+      "nameservers": [
+         "1.1.1.1",
+         "1.0.0.1"
+      ]
+   },
    "kind": "pipeline",
    "name": "Kubernetes",
    "node_selector": {
@@ -53,6 +59,7 @@
             "repo": "kradalby/resume",
             "tags": [
                "latest",
+               "latest-${DRONE_STAGE_OS}-${DRONE_STAGE_ARCH}",
                "${DRONE_COMMIT_SHA:0:8}"
             ],
             "username": {
