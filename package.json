@@ -35,7 +35,7 @@
     "sass": "1.29.0",
     "stylelint": "13.7.2",
     "stylelint-config-prettier": "8.0.2",
-    "terser": "5.4.0",
+    "terser": "5.5.0",
     "typeface-open-sans": "1.1.13"
   }
 }
