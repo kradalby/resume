@@ -24,7 +24,7 @@
     "elm-hot": "1.1.5",
     "elm-test": "0.19.1",
     "elm-verify-examples": "5.0.0",
-    "eslint": "7.16.0",
+    "eslint": "7.17.0",
     "eslint-config-prettier": "7.1.0",
     "eslint-plugin-prettier": "3.3.0",
     "node-sass": "5.0.0",
