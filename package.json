@@ -26,7 +26,7 @@
     "elm-verify-examples": "5.0.0",
     "eslint": "7.18.0",
     "eslint-config-prettier": "7.2.0",
-    "eslint-plugin-prettier": "3.3.0",
+    "eslint-plugin-prettier": "3.3.1",
     "node-sass": "5.0.0",
     "paper-css": "0.4.1",
     "parcel-bundler": "*",
