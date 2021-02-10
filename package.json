@@ -20,7 +20,7 @@
     "cssnano": "4.1.10",
     "elm": "0.19.1-5",
     "elm-analyse": "0.16.5",
-    "elm-format": "0.8.4",
+    "elm-format": "0.8.5",
     "elm-hot": "1.1.6",
     "elm-test": "0.19.1",
     "elm-verify-examples": "5.0.0",
