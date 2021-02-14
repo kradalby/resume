@@ -45,7 +45,7 @@ dom.watch();
 
 import resume from "./resume.json";
 import { setTimeout } from "timers";
-const { Elm } = require("./Main");
+import { Elm } from "./Main.elm";
 
 // const storageKey = 'store'
 // const flags = localStorage.getItem(storageKey)

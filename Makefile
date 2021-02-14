@@ -4,7 +4,7 @@ install:
 	yarn
 
 build:
-	npx parcel build --public-url "./" --experimental-scope-hoisting src/index.html
+	npx parcel build --public-url "./" --no-source-maps src/index.html
 
 dev:
 	npx parcel watch src/index.html
