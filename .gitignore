@@ -1,5 +1,7 @@
 index.html
 
+.parcel-cache/
+
 spa/
 dist/
 tmp/

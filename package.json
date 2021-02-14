@@ -3,13 +3,13 @@
   "name": "resume",
   "version": "1.0.0",
   "description": "Kristoffer Dalby's resume",
-  "main": "index.js",
   "scripts": {
     "test": "elm-test"
   },
   "repository": "git+https://github.com/kradalby/resume.git",
   "license": "MIT",
   "private": true,
+  "sideEffects": false,
   "dependencies": {
     "@babel/core": "7.12.16",
     "@babel/preset-env": "7.12.16",
@@ -24,19 +24,20 @@
     "elm-hot": "1.1.6",
     "elm-test": "0.19.1",
     "elm-verify-examples": "5.0.0",
+    "node-sass": "5.0.0",
+    "paper-css": "0.4.1",
+    "reset-css": "5.0.1",
+    "sass": "1.32.7",
+    "terser": "5.6.0",
+    "typeface-open-sans": "1.1.13"
+  },
+  "devDependencies": {
     "eslint": "7.20.0",
     "eslint-config-prettier": "7.2.0",
     "eslint-plugin-prettier": "3.3.1",
-    "node-sass": "5.0.0",
-    "paper-css": "0.4.1",
-    "parcel-bundler": "*",
+    "parcel": "latest",
     "prettier": "2.2.1",
-    "process": "^0.11.10",
-    "reset-css": "5.0.1",
-    "sass": "1.32.7",
     "stylelint": "13.10.0",
-    "stylelint-config-prettier": "8.0.2",
-    "terser": "5.6.0",
-    "typeface-open-sans": "1.1.13"
+    "stylelint-config-prettier": "8.0.2"
   }
 }
