@@ -72,8 +72,8 @@
         'settings':
           {
             'pages_directory': 'dist',
-            'password': { 'from_secret': 'gh_token' },
-            'username': { 'from_secret': 'gh_username' },
+            'password': { 'from_secret': 'github_pages_push_token' },
+            'username': { 'from_secret': 'github_pages_push_user' },
           },
         'when': { 'branch': ['master'], 'event': ['push'] },
       },
@@ -91,40 +91,4 @@
       },
     ],
   'type': 'kubernetes',
-}
----
-{
-  'get': { 'name': 'id', 'path': 'discord-build' },
-  'kind': 'secret',
-  'name': 'discord_webhook_id',
-}
----
-{
-  'get': { 'name': 'token', 'path': 'discord-build' },
-  'kind': 'secret',
-  'name': 'discord_webhook_token',
-}
----
-{
-  'get': { 'name': 'username', 'path': 'docker' },
-  'kind': 'secret',
-  'name': 'docker_username',
-}
----
-{
-  'get': { 'name': 'password', 'path': 'docker' },
-  'kind': 'secret',
-  'name': 'docker_password',
-}
----
-{
-  'get': { 'name': 'username', 'path': 'gh-pages-push' },
-  'kind': 'secret',
-  'name': 'gh_username',
-}
----
-{
-  'get': { 'name': 'token', 'path': 'gh-pages-push' },
-  'kind': 'secret',
-  'name': 'gh_token',
 }
