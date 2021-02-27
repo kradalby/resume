@@ -11,8 +11,8 @@
   "private": true,
   "sideEffects": false,
   "dependencies": {
-    "@babel/core": "7.13.1",
-    "@babel/preset-env": "7.13.5",
+    "@babel/core": "7.13.8",
+    "@babel/preset-env": "7.13.8",
     "@fortawesome/fontawesome-free": "5.15.2",
     "@fortawesome/fontawesome-svg-core": "1.2.34",
     "@fortawesome/free-brands-svg-icons": "5.15.2",
