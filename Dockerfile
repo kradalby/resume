@@ -2,14 +2,14 @@
 # https://docs.docker.com/engine/userguide/eng-image/multistage-build/
 #
 #
-FROM node:10 as elm
+FROM node:lts-buster as elm
 WORKDIR /app
 
 COPY Makefile package.json ./
 RUN make install
 
 COPY . .
-RUN make build 
+RUN make build
 
 
 RUN apt-get update && apt-get install -y \
