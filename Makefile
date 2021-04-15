@@ -4,7 +4,7 @@ install:
 	yarn
 
 build:
-	npx parcel build --public-url "./" --no-source-maps src/index.html
+	npx parcel build --public-url "./" --no-scope-hoist src/index.html
 
 dev:
 	npx parcel watch src/index.html
@@ -14,6 +14,9 @@ upgrade:
 
 clean:
 	rm -rf dist
+
+clean-all: clean
+	rm -rf node_modules .cache .parcel-cache
 
 reinstall:
 	rm -rf node_modules
