@@ -410,7 +410,6 @@ viewContact basics =
         , viewMaybe viewLocation basics.location
         , viewMaybe email basics.email
         , viewMaybe phone basics.phone
-        , viewMaybe whatsapp basics.phone
 
         -- , viewMaybe telegram basics.phone
         , viewMaybe viewProfiles basics.profiles
