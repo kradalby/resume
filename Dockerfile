@@ -24,7 +24,6 @@ RUN apt-get update && apt-get install -y \
         libdbus-1-dev \
         libgtk2.0-dev \
         libnotify-dev \
-        libgnome-keyring-dev \
         libgconf2-dev \
         libasound2-dev \
         libcap-dev \
