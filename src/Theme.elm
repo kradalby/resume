@@ -361,6 +361,7 @@ email address =
     let
         safe =
             String.replace "@" " at " address
+                |> String.replace "." " dot "
     in
     h5sWithFontAwesome safe (faSolid "envelope")
 
