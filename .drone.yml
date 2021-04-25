@@ -29,19 +29,23 @@
         'pull': 'always',
       },
       {
-        'image': 'banzaicloud/drone-kaniko:0.5.1',
+        'environment': { 'DOCKER_BUILDKIT': 1 },
+        'image': 'plugins/docker',
         'name': 'Build container image',
         'pull': 'always',
+        'settings': { 'dry_run': true, 'purge': true, 'repo': 'build-only' },
         'trigger': { 'event': ['pull_request'] },
         'when': { 'branch': { 'exclude': ['master'] } },
       },
       {
-        'image': 'banzaicloud/drone-kaniko:0.5.1',
+        'environment': { 'DOCKER_BUILDKIT': 1 },
+        'image': 'plugins/docker',
         'name': 'Publish image kradalby/resume',
         'pull': 'always',
         'settings':
           {
             'password': { 'from_secret': 'docker_password' },
+            'purge': true,
             'repo': 'kradalby/resume',
             'tags':
               [
