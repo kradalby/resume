@@ -36,7 +36,7 @@
     "@parcel/transformer-sass": "2.0.0-beta.2",
     "elm": "0.19.1-5",
     "eslint": "7.25.0",
-    "eslint-config-prettier": "8.2.0",
+    "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "3.4.0",
     "parcel": "2.0.0-beta.2",
     "prettier": "2.2.1",
