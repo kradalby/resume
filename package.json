@@ -27,7 +27,7 @@
     "paper-css": "0.4.1",
     "postcss": "8.2.10",
     "reset-css": "5.0.1",
-    "sass": "1.32.10",
+    "sass": "1.32.12",
     "terser": "5.6.1",
     "typeface-open-sans": "1.1.13"
   },
