@@ -17,7 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "5.15.3",
     "cssnano": "5.0.2",
     "paper-css": "0.4.1",
-    "postcss": "8.2.13",
+    "postcss": "8.2.14",
     "reset-css": "5.0.1",
     "typeface-open-sans": "1.1.13"
   },
@@ -32,7 +32,7 @@
     "elm-hot": "1.1.6",
     "elm-test": "0.19.1",
     "elm-verify-examples": "5.0.0",
-    "eslint": "7.25.0",
+    "eslint": "7.26.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-prettier": "3.4.0",
     "node-sass": "5.0.0",
