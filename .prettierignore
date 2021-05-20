@@ -1,0 +1,3 @@
+helm/
+dist/
+.pre-commit-config.yaml
