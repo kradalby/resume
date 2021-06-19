@@ -7,7 +7,7 @@ build:
 	npx parcel build --public-url "./" --no-scope-hoist src/index.html
 
 dev:
-	npx parcel watch src/index.html
+	npx parcel serve src/index.html
 
 upgrade:
 	yarn upgrade --latest

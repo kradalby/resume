@@ -1,9 +1,3 @@
-"use strict";
-
-import opensans from "typeface-open-sans";
-import css from "./styles.scss";
-
-// FONT AWESOME
 import { library, dom } from "@fortawesome/fontawesome-svg-core";
 import {
   faEnvelope,
@@ -44,16 +38,11 @@ library.add(
 dom.watch();
 
 import resume from "./resume.json";
-import { setTimeout } from "timers";
 import { Elm } from "./Main.elm";
 
-// const storageKey = 'store'
-// const flags = localStorage.getItem(storageKey)
-let app = Elm.Main.init({
-  flags: resume,
-  node: document.getElementById("app"),
+document.addEventListener("DOMContentLoaded", function () {
+  let app = Elm.Main.init({
+    flags: resume,
+    node: document.getElementById("app"),
+  });
 });
-
-// setTimeout(() => {
-//   document.body.dispatchEvent(new Event("view-ready"));
-// }, 5000);

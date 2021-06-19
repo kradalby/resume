@@ -618,6 +618,20 @@
   dependencies:
     "@parcel/types" "2.0.0-beta.3.1"
 
+"@parcel/plugin@2.0.0-nightly.280+2668bee1":
+  version "2.0.0-nightly.280"
+  resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.0.0-nightly.280.tgz#347227c2be08b7178eaa2c6122808109c2ad1028"
+  integrity sha512-eI1etpF01ST2hvQ3mmEQRQch4sEhELUU6weYUz/3vipmUrSbPxavipPJdh5mMkh5KURLcAQ77Ac7iu9kcqBEPg==
+  dependencies:
+    "@parcel/types" "2.0.0-nightly.280+2668bee1"
+
+"@parcel/reporter-bundle-buddy@^2.0.0-nightly.1902":
+  version "2.0.0-nightly.1902"
+  resolved "https://registry.yarnpkg.com/@parcel/reporter-bundle-buddy/-/reporter-bundle-buddy-2.0.0-nightly.1902.tgz#51753afc737dd8f6ac47ab0b81e64d0c0601b768"
+  integrity sha512-CuW0Qry+fUVK+CfKBl6Q5zy1YRR+/y8XF1G+RZbQYWim6dX0z8He7Vr7q1XxVPy1HXej/P7q0QgJdduKyW9odg==
+  dependencies:
+    "@parcel/plugin" "2.0.0-nightly.280+2668bee1"
+
 "@parcel/reporter-cli@2.0.0-beta.3.1":
   version "2.0.0-beta.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/reporter-cli/-/reporter-cli-2.0.0-beta.3.1.tgz#46c6985142be163f99ad682abc5b63ce27a049b5"
@@ -828,6 +842,11 @@
   version "2.0.0-beta.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-beta.3.1.tgz#0bc5255a4454c198d58403b84a66f059106e1610"
   integrity sha512-8Cmh5/43LZ7wQeqawFMenZ/CCh+YAbyRuwBBApMCDLU3+RSpajUYyTpqa1HZVV8FggQb8E0xvPkmUbj/UHz/gw==
+
+"@parcel/types@2.0.0-nightly.280+2668bee1":
+  version "2.0.0-nightly.280"
+  resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-nightly.280.tgz#bafbb23815f2fa3fc047b3f145a99a2a52f591fa"
+  integrity sha512-k7dAvdujTgsXMHPj9qZWj7dvegzzgDdczfkSgDBQZCEtB5cjkX1E8M8+NY9gMQ+ZjL8LcvRlh/RwkEIkoalmXw==
 
 "@parcel/utils@2.0.0-beta.3.1":
   version "2.0.0-beta.3.1"
