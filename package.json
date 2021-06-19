@@ -22,6 +22,7 @@
     "typeface-open-sans": "1.1.13"
   },
   "devDependencies": {
+    "@parcel/reporter-bundle-buddy": "^2.0.0-nightly.1902",
     "@parcel/transformer-elm": "2.0.0-beta.3.1",
     "@parcel/transformer-sass": "2.0.0-beta.3.1",
     "elm": "0.19.1-5",
