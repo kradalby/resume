@@ -419,6 +419,14 @@
     json-source-map "^0.6.1"
     nullthrows "^1.1.1"
 
+"@parcel/diagnostic@2.0.0-nightly.474+a23db0bb":
+  version "2.0.0-nightly.474"
+  resolved "https://registry.yarnpkg.com/@parcel/diagnostic/-/diagnostic-2.0.0-nightly.474.tgz#79f6f7f1ba05fbdfdcb5a601a17036f7a1372a5c"
+  integrity sha512-wXperaJVkYsfASH1O2gvpmm73PPN24g1+mg5YUCpKQK7LPcRihmsaK7XTZcO+Qz80P/3D1a3AO/tLtIGq6bW4w==
+  dependencies:
+    json-source-map "^0.6.1"
+    nullthrows "^1.1.1"
+
 "@parcel/events@2.0.0-beta.3.1":
   version "2.0.0-beta.3.1"
   resolved "https://registry.yarnpkg.com/@parcel/events/-/events-2.0.0-beta.3.1.tgz#4a760c192f8d54013645999588acf49e1684a5f4"
@@ -625,6 +633,13 @@
   dependencies:
     "@parcel/types" "2.0.0-nightly.280+2668bee1"
 
+"@parcel/plugin@2.0.0-nightly.474+a23db0bb":
+  version "2.0.0-nightly.474"
+  resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.0.0-nightly.474.tgz#d0fdb85849055e7f9acfaeda1a544f1f8b3f5e2e"
+  integrity sha512-O5dLbaC0O4Yrx+ZyL2M5bAq5fMW91p0duniQ7n2zfrl9K3WpXpBIqjDeDehn3qFOFtjq7JP1+/bT5pX8SmRHNw==
+  dependencies:
+    "@parcel/types" "2.0.0-nightly.474+a23db0bb"
+
 "@parcel/reporter-bundle-buddy@^2.0.0-nightly.1902":
   version "2.0.0-nightly.1902"
   resolved "https://registry.yarnpkg.com/@parcel/reporter-bundle-buddy/-/reporter-bundle-buddy-2.0.0-nightly.1902.tgz#51753afc737dd8f6ac47ab0b81e64d0c0601b768"
@@ -735,17 +750,15 @@
     postcss-value-parser "^4.1.0"
     semver "^5.4.1"
 
-"@parcel/transformer-elm@2.0.0-beta.3.1":
-  version "2.0.0-beta.3.1"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-elm/-/transformer-elm-2.0.0-beta.3.1.tgz#c5fc2eebf9967f736e3119708b153e3788a83ddc"
-  integrity sha512-n8pNTitGBWNZELrU93qg8GDkTR974V0bkSerK27BqaYTLgmefLcxmtwD6+WGL+Z1bNzHYDRUSF8ZMmIQN8AIOQ==
+"@parcel/transformer-elm@2.0.0-nightly.2096":
+  version "2.0.0-nightly.2096"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-elm/-/transformer-elm-2.0.0-nightly.2096.tgz#ee0c4726c6d1f98d74d7dfca8e5f35054b238b34"
+  integrity sha512-JiObXtn/2rquKj3y3ieVx+YwcOZTJfPnLLhN+qa7nmNSgZFiByAchd/es9DDlc/NCk0SnaWQ61IU5O8bti45eQ==
   dependencies:
-    "@parcel/diagnostic" "2.0.0-beta.3.1"
-    "@parcel/plugin" "2.0.0-beta.3.1"
+    "@parcel/diagnostic" "2.0.0-nightly.474+a23db0bb"
+    "@parcel/plugin" "2.0.0-nightly.474+a23db0bb"
     command-exists "^1.2.8"
     cross-spawn "^7.0.3"
-    elm-hot "^1.1.5"
-    node-elm-compiler "^5.0.5"
     nullthrows "^1.1.1"
     terser "^5.2.1"
 
@@ -847,6 +860,11 @@
   version "2.0.0-nightly.280"
   resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-nightly.280.tgz#bafbb23815f2fa3fc047b3f145a99a2a52f591fa"
   integrity sha512-k7dAvdujTgsXMHPj9qZWj7dvegzzgDdczfkSgDBQZCEtB5cjkX1E8M8+NY9gMQ+ZjL8LcvRlh/RwkEIkoalmXw==
+
+"@parcel/types@2.0.0-nightly.474+a23db0bb":
+  version "2.0.0-nightly.474"
+  resolved "https://registry.yarnpkg.com/@parcel/types/-/types-2.0.0-nightly.474.tgz#840f4a4c01d61f8c3d093ded415fa8903b2ae893"
+  integrity sha512-3zcBpQoYylY6V8eoPupzNjpcLnnAUmsuUK9RXJQ6QHrgB8C9dYb/yLCuiO5Vb4UgexQvv9URcO/CA1uZVdBXqg==
 
 "@parcel/utils@2.0.0-beta.3.1":
   version "2.0.0-beta.3.1"
@@ -2663,7 +2681,7 @@ elm-format@0.8.5:
   dependencies:
     binwrap "^0.2.3"
 
-elm-hot@1.1.6, elm-hot@^1.1.5:
+elm-hot@1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/elm-hot/-/elm-hot-1.1.6.tgz#93e3962b40670e65f0a3640951b3add2702bfd0e"
   integrity sha512-zYZJlfs7Gt4BdjA+D+857K+XAWzwwySJmXCgFpHW1dIEfaHSZCIPYPf7/jinZBLfKRkOAlKzI32AA84DY50g7Q==
@@ -3235,14 +3253,6 @@ find-elm-dependencies@2.0.2:
     firstline "1.2.0"
     lodash "4.17.15"
 
-find-elm-dependencies@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/find-elm-dependencies/-/find-elm-dependencies-2.0.4.tgz#0a327fc8c0c0297b54115efbf0a9d6de474cfc89"
-  integrity sha512-x/4w4fVmlD2X4PD9oQ+yh9EyaQef6OtEULdMGBTuWx0Nkppvo2Z/bAiQioW2n+GdRYKypME2b9OmYTw5tw5qDg==
-  dependencies:
-    firstline "^1.2.0"
-    lodash "^4.17.19"
-
 find-parent-dir@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/find-parent-dir/-/find-parent-dir-0.3.0.tgz#33c44b429ab2b2f0646299c5f9f718f376ff8d54"
@@ -3287,11 +3297,6 @@ firstline@2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/firstline/-/firstline-2.0.2.tgz#3fdfd894a80e181cd2fa478b07cadb8d446c53cd"
   integrity sha512-8KcmfI0jgSECnzdhucm0i7vrwef3BWwgjimW2YkRC5eSFwjb5DibVoA0YvgkYwwxuJi9c+7M7X3b3lX8o9B6wg==
-
-firstline@^1.2.0:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/firstline/-/firstline-1.3.1.tgz#59e84af0fd858fbc6dac0a0ff97fd22a47e58084"
-  integrity sha512-ycwgqtoxujz1dm0kjkBFOPQMESxB9uKc/PlD951dQDIG+tBXRpYZC2UmJb0gDxopQ1ZX6oyRQN3goRczYu7Deg==
 
 flat-cache@^3.0.4:
   version "3.0.4"
@@ -5079,16 +5084,6 @@ node-elm-compiler@5.0.4:
     cross-spawn "6.0.5"
     find-elm-dependencies "2.0.2"
     lodash "4.17.15"
-    temp "^0.9.0"
-
-node-elm-compiler@^5.0.5:
-  version "5.0.6"
-  resolved "https://registry.yarnpkg.com/node-elm-compiler/-/node-elm-compiler-5.0.6.tgz#d4a6e6c9d9a26dba4211ccd2aeae7d5e34057f0c"
-  integrity sha512-DWTRQR8b54rvschcZRREdsz7K84lnS8A6YJu8du3QLQ8f204SJbyTaA6NzYYbfUG97OTRKRv/0KZl82cTfpLhA==
-  dependencies:
-    cross-spawn "6.0.5"
-    find-elm-dependencies "^2.0.4"
-    lodash "^4.17.19"
     temp "^0.9.0"
 
 node-forge@^0.10.0:
