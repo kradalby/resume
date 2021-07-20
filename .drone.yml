@@ -55,7 +55,7 @@
               ],
             'username': { 'from_secret': 'docker_username' },
           },
-        'when': { 'branch': ['master'], 'event': ['push'] },
+        'when': { 'branch': ['master', 'main'], 'event': ['push'] },
       },
       {
         'commands':
@@ -67,7 +67,7 @@
         'image': 'kradalby/container-file-extractor:latest',
         'name': 'Extract from container',
         'pull': 'always',
-        'when': { 'branch': ['master'], 'event': ['push'] },
+        'when': { 'branch': ['master', 'main'], 'event': ['push'] },
       },
       {
         'image': 'plugins/gh-pages',
@@ -79,7 +79,7 @@
             'password': { 'from_secret': 'github_pages_push_token' },
             'username': { 'from_secret': 'github_pages_push_user' },
           },
-        'when': { 'branch': ['master'], 'event': ['push'] },
+        'when': { 'branch': ['master', 'main'], 'event': ['push'] },
       },
       {
         'image': 'appleboy/drone-discord',
@@ -93,7 +93,7 @@
           },
         'when':
           {
-            'branch': ['master'],
+            'branch': ['master', 'main'],
             'event': ['push'],
             'status': ['success', 'failure'],
           },
