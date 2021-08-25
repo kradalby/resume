@@ -16,6 +16,7 @@
     "@fortawesome/free-brands-svg-icons": "5.15.4",
     "@fortawesome/free-solid-svg-icons": "5.15.4",
     "cssnano": "5.0.8",
+    "elm-json": "^0.2.10",
     "paper-css": "0.4.1",
     "postcss": "8.3.6",
     "reset-css": "5.0.1",
