@@ -1762,7 +1762,7 @@ chokidar@3.2.1:
   optionalDependencies:
     fsevents "~2.1.0"
 
-"chokidar@>=3.0.0 <4.0.0":
+"chokidar@>=3.0.0 <4.0.0", chokidar@^3.5.1:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.2.tgz#dba3976fcadb016f66fd365021d91600d01c1e75"
   integrity sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==
@@ -2553,13 +2553,35 @@ elm-test@0.19.1:
     which "2.0.1"
     xmlbuilder "^13.0.2"
 
-elm-verify-examples@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/elm-verify-examples/-/elm-verify-examples-5.0.0.tgz#58bdcfdeefee490b7fb6fa3e947748e27d736774"
-  integrity sha512-dAOv+U9hXZ0IRGx19mkpCAdf5rUwoJWlzFmcR2gvOzE/QjZUSlPh3e0IIDAfGUuEF8DjfE5CTe31fNtIkkd2rQ==
+elm-test@^0.19.1-revision7:
+  version "0.19.1-revision7"
+  resolved "https://registry.yarnpkg.com/elm-test/-/elm-test-0.19.1-revision7.tgz#1a0864b001f2cc55ba6479bd3afedfbd271ab549"
+  integrity sha512-sd3nCQMeYMaY84Sz41bVJ30ZvQN1/4ZcD8uYMOuUbM39FDh58NY9/AcImVJ7Z+gjCFdcSU6VscZzhUoPW8jp6Q==
+  dependencies:
+    chalk "^4.1.0"
+    chokidar "^3.5.1"
+    commander "^7.1.0"
+    cross-spawn "^7.0.3"
+    elm-tooling "^1.2.0"
+    glob "^7.1.6"
+    graceful-fs "^4.2.4"
+    rimraf "^3.0.2"
+    split "^1.0.1"
+    which "^2.0.2"
+    xmlbuilder "^15.1.0"
+
+elm-tooling@^1.2.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/elm-tooling/-/elm-tooling-1.6.0.tgz#708a444dea9710c86f5becbe7336363f233ba78f"
+  integrity sha512-quliLTmqEcqqFZEcJKnYcZ9BrL1K2sYvtryQl6BfaMD6HaI8oRaZYDPY/Ihdo7X7t7mY5TbSlrcxv6coJgWwtA==
+
+elm-verify-examples@5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/elm-verify-examples/-/elm-verify-examples-5.2.0.tgz#f9103aa95f47302a270b2bced27c2f0e8c8d615e"
+  integrity sha512-YhBRf4S4WxvjzyhHHMmXc2CHVtwwHqXU4h8jxUwcZ+elMz3GiGB4nYRCdZIWrKE1bw5W0TDRcQ4gsc9SgpSxbw==
   dependencies:
     chalk "^2.4.2"
-    elm-test "0.19.1"
+    elm-test "^0.19.1-revision7"
     fs-extra "^5.0.0"
     mkdirp "^0.5.1"
     rimraf "^2.6.3"
@@ -3317,6 +3339,18 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4, glob@~7.1.1:
   version "7.1.6"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
   integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^3.0.4"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
+glob@^7.1.6:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.0.tgz#d15535af7732e02e948f4c41628bd910293f6023"
+  integrity sha512-lmLf6gtyrPq8tTjSmrO94wBeQbFR3HbLHbuyD69wuyQkImp2hWqMGB47OX65FBkPffO641IP9jWa1z4ivqG26Q==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -6329,7 +6363,7 @@ split2@^3.1.1:
   dependencies:
     readable-stream "^3.0.0"
 
-split@1.0.1:
+split@1.0.1, split@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/split/-/split-1.0.1.tgz#605bd9be303aa59fb35f9229fbea0ddec9ea07d9"
   integrity sha512-mTyOoPbrivtXnwnIxZRFYRrPNtEFKlpB2fvjSnCQUiAA6qAZzqwna5envK4uk6OIeP17CsdF3rSBGYVBsU0Tkg==
@@ -7359,6 +7393,11 @@ xmlbuilder@^13.0.2:
   version "13.0.2"
   resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-13.0.2.tgz#02ae33614b6a047d1c32b5389c1fdacb2bce47a7"
   integrity sha512-Eux0i2QdDYKbdbA6AM6xE4m6ZTZr4G4xF9kahI2ukSEMCzwce2eX9WlTI5J3s+NU7hpasFsr8hWIONae7LluAQ==
+
+xmlbuilder@^15.1.0:
+  version "15.1.1"
+  resolved "https://registry.yarnpkg.com/xmlbuilder/-/xmlbuilder-15.1.1.tgz#9dcdce49eea66d8d10b42cae94a79c3c8d0c2ec5"
+  integrity sha512-yMqGBqtXyeN1e3TGYvgNgDVZ3j84W4cwkOXQswghol6APgZWaff9lnbvN7MHYJOiXsvGPXtjTYJEiC9J2wv9Eg==
 
 xmlchars@^2.1.1:
   version "2.2.0"
