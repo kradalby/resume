@@ -935,13 +935,13 @@
     postcss-value-parser "^4.1.0"
     semver "^5.4.1"
 
-"@parcel/transformer-elm@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@parcel/transformer-elm/-/transformer-elm-2.0.0.tgz#0d926e7969e8453491ea35e9a6bc67265aefd111"
-  integrity sha512-0KOBA+hbTaAUqDuR3EDndJxWlq+b+Ld1BnEAlKD6e4LDVDarfvdh7mKHvqrtTBXoo5w5o31puBy13+tN9vOLCA==
+"@parcel/transformer-elm@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@parcel/transformer-elm/-/transformer-elm-2.0.1.tgz#a44efeea7a048004d36a21dbc6a6f3f5d35acf3b"
+  integrity sha512-2gNiqEfWYWxo7CNItEokVoXSioDVVXelJ3qtxYP0zjQcqiLLXZjYBKcM9gsbO5p/sJrC2RTR+MeosiM3fpfiYQ==
   dependencies:
-    "@parcel/diagnostic" "^2.0.0"
-    "@parcel/plugin" "^2.0.0"
+    "@parcel/diagnostic" "^2.0.1"
+    "@parcel/plugin" "^2.0.1"
     command-exists "^1.2.8"
     cross-spawn "^7.0.3"
     elm-hot "^1.1.5"
