@@ -18,7 +18,7 @@
     "cssnano": "5.1.7",
     "elm-json": "^0.2.12",
     "paper-css": "0.4.1",
-    "postcss": "8.4.13",
+    "postcss": "8.4.14",
     "reset-css": "5.0.1",
     "typeface-open-sans": "1.1.13"
   },
