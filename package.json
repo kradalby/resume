@@ -37,7 +37,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "node-sass": "7.0.1",
     "parcel": "2.0.1",
-    "prettier": "2.5.1",
+    "prettier": "2.7.1",
     "stylelint": "13.13.1",
     "stylelint-config-prettier": "8.0.2"
   }
