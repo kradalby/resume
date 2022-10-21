@@ -9,10 +9,10 @@
     "summary": "",
     "location": {
       "address": "",
-      "postalCode": "W1F 9BE",
-      "city": "London",
-      "countryCode": "UK",
-      "region": "Greater London"
+      "postalCode": "2312RG",
+      "city": "Leiden",
+      "countryCode": "The Netherlands",
+      "region": ""
     },
     "profiles": [
       {
@@ -29,11 +29,20 @@
   },
   "work": [
     {
+      "company": "Tailscale inc",
+      "position": "Member of Technical Staff",
+      "website": "https://tailscale.com",
+      "startDate": "2022-09",
+      "endDate": "present",
+      "summary": "working on Tailscale and Headscale",
+      "highlights": []
+    },
+    {
       "company": "G-Research",
       "position": "Site Reliability Engineer",
       "website": "https://www.gresearch.co.uk",
       "startDate": "2019-09",
-      "endDate": "present",
+      "endDate": "2022-08",
       "summary": "Helping teams improving their observability and reliability",
       "highlights": []
     },
