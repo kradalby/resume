@@ -13,11 +13,16 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  lint:
+  build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Super-Linter
-        uses: github/super-linter@v4.9.4
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v16
+
+      - name: Run build
+        run: nix develop -- make build
+
+      - name: Run render
+        run: nix develop -- xvfb-run yarn electron-pdf ./dist/index.html ./dist/resume.pdf
