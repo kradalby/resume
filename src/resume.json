@@ -11,7 +11,7 @@
       "address": "",
       "postalCode": "2312RG",
       "city": "Leiden",
-      "countryCode": "The Netherlands",
+      "countryCode": "NL",
       "region": ""
     },
     "profiles": [
@@ -34,7 +34,7 @@
       "website": "https://tailscale.com",
       "startDate": "2022-09",
       "endDate": "present",
-      "summary": "working on Tailscale and Headscale",
+      "summary": "Working on Tailscale and Headscale",
       "highlights": []
     },
     {
