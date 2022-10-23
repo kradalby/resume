@@ -28,4 +28,12 @@ jobs:
         run: nix develop --command -- make build
 
       - name: Run render
-        run: nix develop --command -- xvfb-run yarn electron-pdf ./dist/index.html ./dist/resume.pdf
+        run: nix develop --command -- xvfb-run yarn electron-pdf $GITHUB_WORKSPACE/dist/index.html $GITHUB_WORKSPACE/dist/resume.pdf
+
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: resume.kradalby.no
