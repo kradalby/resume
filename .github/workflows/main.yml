@@ -22,7 +22,7 @@ jobs:
       - uses: cachix/install-nix-action@v16
 
       - name: Run build
-        run: nix develop -- make build
+        run: nix develop --command -- make build
 
       - name: Run render
-        run: nix develop -- xvfb-run yarn electron-pdf ./dist/index.html ./dist/resume.pdf
+        run: nix develop --command -- xvfb-run yarn electron-pdf ./dist/index.html ./dist/resume.pdf
