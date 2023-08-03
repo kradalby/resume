@@ -34,7 +34,7 @@
     "elm-test": "0.19.1",
     "elm-verify-examples": "5.2.0",
     "eslint": "8.22.0",
-    "eslint-config-prettier": "8.5.0",
+    "eslint-config-prettier": "8.10.0",
     "eslint-plugin-prettier": "4.2.1",
     "node-sass": "7.0.1",
     "parcel": "2.6.2",
