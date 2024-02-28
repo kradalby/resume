@@ -24,9 +24,9 @@
     "typeface-open-sans": "1.1.13"
   },
   "devDependencies": {
-    "@parcel/reporter-bundle-buddy": "2.6.2",
-    "@parcel/transformer-elm": "2.6.2",
-    "@parcel/transformer-sass": "2.6.2",
+    "@parcel/reporter-bundle-buddy": "2.12.0",
+    "@parcel/transformer-elm": "2.12.0",
+    "@parcel/transformer-sass": "2.12.0",
     "elm": "0.19.1-5",
     "elm-analyse": "0.16.5",
     "elm-format": "0.8.5",
@@ -37,7 +37,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.2.1",
     "node-sass": "7.0.1",
-    "parcel": "2.6.2",
+    "parcel": "2.12.0",
     "prettier": "2.7.1",
     "stylelint": "13.13.1",
     "stylelint-config-prettier": "8.0.2"
