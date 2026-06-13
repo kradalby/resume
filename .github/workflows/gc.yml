@@ -11,7 +11,7 @@ concurrency:
 on:
   schedule:
     # Daily, off-peak (UTC).
-    - cron: "23 3 * * *"
+    - cron: '23 3 * * *'
   workflow_dispatch:
     inputs:
       dry-run:
