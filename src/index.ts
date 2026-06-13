@@ -32,7 +32,7 @@ library.add(
   faTwitter,
   faWhatsapp,
   faTelegram,
-  faLinkedin
+  faLinkedin,
 );
 // This will look continously to convert i-fa to svg
 dom.watch();
