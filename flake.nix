@@ -13,18 +13,10 @@
     , treefmt-nix
     , ...
     }:
-    {
-      overlay = final: prev:
-        let
-          pkgs = nixpkgs.legacyPackages.${prev.system};
-        in
-        rec { };
-    }
-    // flake-utils.lib.eachDefaultSystem
+    flake-utils.lib.eachDefaultSystem
       (system:
       let
         pkgs = import nixpkgs {
-          overlays = [ self.overlay ];
           inherit system;
         };
 
@@ -32,6 +24,8 @@
           [
             nodejs
             yarn
+            prek
+            gnumake
           ]
           ++ lib.optionals pkgs.stdenv.isLinux [
             xvfb-run
@@ -121,7 +115,7 @@
         formatter = treefmt.config.build.wrapper;
 
         # `nix develop`
-        devShell = pkgs.mkShell {
+        devShells.default = pkgs.mkShell {
           buildInputs = devDeps;
           shellHook = ''
             export DISPLAY=:9.0
