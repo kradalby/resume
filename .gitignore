@@ -283,6 +283,10 @@ fabric.properties
 
 ### direnv ###
 .direnv
-.envrc
+.envrc.local
 
 # End of https://www.toptal.com/developers/gitignore/api/direnv
+
+# Nix build symlinks
+result
+result-*
