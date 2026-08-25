@@ -27,7 +27,7 @@
             prek
             gnumake
           ]
-          ++ lib.optionals pkgs.stdenv.isLinux [
+          ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
             xvfb-run
           ];
 
