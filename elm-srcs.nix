@@ -1,13 +1,13 @@
 {
 
   "NoRedInk/elm-json-decode-pipeline" = {
-    sha256 = "0y25xn0yx1q2xlg1yx1i0hg4xq1yxx6yfa99g272z8162si75hnl";
-    version = "1.0.0";
+    sha256 = "1k241pjz1wj5rqv95f1j86msa0s0p6w4v8n0jn26aw6cbadw363b";
+    version = "1.0.1";
   };
 
   "elm-community/list-extra" = {
-    sha256 = "0gsy04gw9nilb24fnc4rkxj255f904yjg8z5qcf1iin0c9rgd7c4";
-    version = "8.4.0";
+    sha256 = "02grd0p5hc2gvdy4n723d1s28pm1grn95jrzic6jcgb26qh16vcc";
+    version = "8.7.0";
   };
 
   "elm/browser" = {
@@ -21,18 +21,18 @@
   };
 
   "elm/json" = {
-    sha256 = "0kjwrz195z84kwywaxhhlnpl3p251qlbm5iz6byd6jky2crmyqyh";
-    version = "1.1.3";
+    sha256 = "0w1n61m2b9zbwp1yx8zhvir7gqy66mkm22rpq8hmnvgkcwnhxalb";
+    version = "1.1.4";
   };
 
   "rtfeldman/elm-css" = {
-    sha256 = "189pf91bdpyz4qyilbzjh2mj3x46j7abb9asnkiv1chzvhcamrn5";
-    version = "16.1.1";
+    sha256 = "1gwhgqwclc7clk1ns4qqzyn7b4wvcmccg9qavvb8m694qmwlkzjy";
+    version = "18.0.0";
   };
 
   "elm/html" = {
-    sha256 = "1n3gpzmpqqdsldys4ipgyl1zacn0kbpc3g4v3hdpiyfjlgh8bf3k";
-    version = "1.0.0";
+    sha256 = "0ljwld3yk682qimkwdsbf4vb3fsv3y2hlisym94i705gx18dz6l8";
+    version = "1.0.1";
   };
 
   "elm/time" = {
@@ -46,8 +46,13 @@
   };
 
   "elm/virtual-dom" = {
-    sha256 = "0q1v5gi4g336bzz1lgwpn5b1639lrn63d8y6k6pimcyismp2i1yg";
-    version = "1.0.2";
+    sha256 = "0zc3dfzqsma8lrkbm6nkjqbsfcv6h5nja1rh7ybkinw1jk0kfdv6";
+    version = "1.0.5";
+  };
+
+  "robinheghan/murmur3" = {
+    sha256 = "15asmgr2zqh7rkywrg5647rpdqkpzxk02v5qc6ndj60jza3gsmjk";
+    version = "1.0.0";
   };
 
   "rtfeldman/elm-hex" = {
@@ -56,8 +61,13 @@
   };
 
   "elm-explorations/test" = {
-    sha256 = "1fsd7bajm7qa93r5pn3mdafqh3blpzya601jbs9l238p0hmvh576";
-    version = "1.2.2";
+    sha256 = "15ayrylxancgjbdnmb0x7297vx86mn7206mdzihbf1yr4g6hlq3i";
+    version = "2.2.1";
+  };
+
+  "elm/bytes" = {
+    sha256 = "02ywbf52akvxclpxwj9n04jydajcbsbcbsnjs53yjc5lwck3abwj";
+    version = "1.0.8";
   };
 
   "elm/random" = {
