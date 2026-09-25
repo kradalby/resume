@@ -83,7 +83,7 @@
 
             ${pkgs.elmPackages.fetchElmDeps {
               elmPackages = import ./elm-srcs.nix;
-              elmVersion = "0.19.1";
+              elmVersion = "0.19.2";
               registryDat = ./registry.dat;
             }}
             runHook postConfigure
