@@ -48,7 +48,9 @@
         build = pkgs.stdenv.mkDerivation {
           pname = "resume";
           version = "1.0.0";
-          src = ./.;
+          # Parcel names index bundles after the project dir; a fixed name
+          # keeps the store hash out of the published asset names.
+          src = builtins.path { path = ./.; name = "resume"; };
 
           nativeBuildInputs = with pkgs; [
             yarn
