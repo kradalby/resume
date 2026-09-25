@@ -410,7 +410,7 @@ language lang fluency =
                     "flag-usa"
 
                 "norwegian" ->
-                    "skiing-nordic"
+                    "person-skiing-nordic"
 
                 _ ->
                     ""
@@ -431,10 +431,10 @@ interest lang =
         iconName =
             case String.toLower lang of
                 "brewing" ->
-                    "beer"
+                    "beer-mug-empty"
 
                 "skiing" ->
-                    "skiing-nordic"
+                    "person-skiing-nordic"
 
                 "traveling" ->
                     "suitcase"
