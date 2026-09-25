@@ -59,7 +59,7 @@
 
           yarnOfflineCache = pkgs.fetchYarnDeps {
             yarnLock = ./yarn.lock;
-            sha256 = "01107x21d3agy0mdawprrjc6in1bp2dpirwfkkcvgnxlqirf2y48";
+            hash = "sha256-N6tj5o/8zpifzmkEs9vDATu2Z884G+fjGzbKGxwgfzk=";
           };
 
           configurePhase = ''
